@@ -8,13 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController
+{
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var phrasesButton: UIButton!
+    @IBOutlet weak var translateButton: UIButton!
+    
+    var phraseChose = false
+    var transChose = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pickController = segue.destination as! langPickViewController
+        
+        pickController.isPhrase = phraseChose
+        pickController.isTranslate = transChose
     }
 
-
+    
+    @IBAction func phrasePressed(_ sender: Any) {        phraseChose = true
+        transChose = false
+        self.performSegue(withIdentifier: "langPick", sender: nil)
+    }
+    
+    
+    @IBAction func transPressed(_ sender: Any) {
+        phraseChose = false
+        transChose = true
+        self.performSegue(withIdentifier: "langPick", sender: nil)
+    }
+    
 }
 
