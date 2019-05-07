@@ -34,10 +34,15 @@ class SecondViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let senderButton = sender as! UIButton
+        if senderButton.tag != 1
+        {
         let thirdController = segue.destination as! ThirdViewController
         
         thirdController.chosenPhrase = self.stringToTrans
-        thirdController.chosenLanguageInt = chosenLanguage
+            thirdController.chosenLanguageInt = chosenLanguage
+            
+        }
     }
     
 
