@@ -106,6 +106,9 @@ class ThirdViewController: UIViewController {
             case 6:
                 chosenLanguageStr = "en-ru"
                 voiceLanguage = "ru-RU"
+            case 7:
+                chosenLanguageStr = "en-pt"
+                voiceLanguage = "pt-BR"
             default:
                 chosenLanguageStr = "en-es"
         }
@@ -118,6 +121,7 @@ class ThirdViewController: UIViewController {
         utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
         speechSynth.speak(utterance)
     }
+    
     /*
     // MARK: - Navigation
 

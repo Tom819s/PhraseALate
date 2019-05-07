@@ -16,6 +16,7 @@
 		3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */; };
 		3F19714522502DD30033E9E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714422502DD30033E9E9 /* SecondViewController.swift */; };
 		3F19714722502E670033E9E9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714622502E670033E9E9 /* ThirdViewController.swift */; };
+		3F620DA72281E6DD00F25E3B /* appBackgroundBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3F19713A224FA7B30033E9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F19714422502DD30033E9E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3F19714622502E670033E9E9 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appBackgroundBlue.png; path = ../../../Downloads/appBackgroundBlue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3F19714622502E670033E9E9 /* ThirdViewController.swift */,
 				3F0B58FB2250AEC20081AAFB /* FourthViewController.swift */,
 				3F0B58FD2250BD850081AAFB /* langPickViewController.swift */,
+				3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
 				3F19713A224FA7B30033E9E9 /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */,
+				3F620DA72281E6DD00F25E3B /* appBackgroundBlue.png in Resources */,
 				3F197136224FA7B30033E9E9 /* Assets.xcassets in Resources */,
 				3F197134224FA7B20033E9E9 /* Main.storyboard in Resources */,
 			);

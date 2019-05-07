@@ -300,6 +300,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Replay Audio">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.82387524840000004" green="0.57603496310000002" blue="0.91768079999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="speakAgainPressed:" destination="JCx-sc-Ehl" eventType="touchUpInside" id="ve6-WP-hit"/>
@@ -338,7 +339,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D1o-pv-PVd"/>
-        <segue reference="eMS-Og-FsI"/>
+        <segue reference="o3e-2R-qIC"/>
+        <segue reference="9gj-Zm-CSn"/>
     </inferredMetricsTieBreakers>
 </document>

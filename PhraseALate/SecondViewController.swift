@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBAction func bathroomPressed(_ sender: Any) {
-        stringToTrans = "Where is the bathroom?"
+        stringToTrans = "Where is the toilet?"
     }
     @IBAction func checksPressed(_ sender: Any) {
         

@@ -32,7 +32,7 @@ class FourthViewController: UIViewController, UITextViewDelegate {
         if (textEnter.textColor == UIColor.lightGray)
         {
             textEnter.text = ""
-            textEnter.textColor = UIColor.white
+            textEnter.textColor = UIColor.black
         }
     }
     
