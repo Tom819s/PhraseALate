@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ThirdViewController: UIViewController {
 
@@ -17,8 +18,11 @@ class ThirdViewController: UIViewController {
     
     var translatedString = String()
     var chosenPhrase = String()
+    var voiceLanguage = String()
     var chosenLanguageInt = Int()
     var chosenLanguageStr = String()
+    var hasTranslated = false
+    let speechSynth = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,16 +61,25 @@ class ThirdViewController: UIViewController {
                     DispatchQueue.main.async
                         {
                         self.translatedView.text = self.translatedString
+                        self.hasTranslated = true
+                        self.speakOutLoud()
                         }
+                    
                     
                 }
                 catch let jsonErr
                 {
                     print("JSON decoding exception")
-                    
+                    self.translatedView.text = "Error: Try Again"
                 }
             }
         }.resume()
+    }
+    
+    @IBAction func speakAgainPressed(_ sender: Any) {
+        if hasTranslated{
+            self.speakOutLoud()
+        }
     }
 
     func languageIntToAPIStr(){
@@ -74,21 +87,36 @@ class ThirdViewController: UIViewController {
             //"Spanish", "German", "Turkish", "Dutch", "French", "Finnish", "Russian"
             case 0:
             chosenLanguageStr = "en-es"
+            voiceLanguage = "es-MX"
             case 1:
                 chosenLanguageStr = "en-de"
+                voiceLanguage = "da-DK"
             case 2:
                 chosenLanguageStr = "en-tr"
+                voiceLanguage = "tr-TR"
             case 3:
                 chosenLanguageStr = "en-nl"
+                voiceLanguage = "nl-NL"
             case 4:
                 chosenLanguageStr = "en-fr"
+                voiceLanguage = "fr-FR"
             case 5:
                 chosenLanguageStr = "en-fi"
+                voiceLanguage = "fi-FI"
             case 6:
                 chosenLanguageStr = "en-ru"
+                voiceLanguage = "ru-RU"
             default:
                 chosenLanguageStr = "en-es"
         }
+    }
+    
+    func speakOutLoud(){
+        let translatedNoPunctuation = translatedString.components(separatedBy: CharacterSet.punctuationCharacters).joined()
+        let utterance = AVSpeechUtterance(string: translatedNoPunctuation)
+        utterance.rate = 0.4
+        utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
+        speechSynth.speak(utterance)
     }
     /*
     // MARK: - Navigation
