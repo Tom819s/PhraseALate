@@ -33,7 +33,7 @@ class langPickViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        languageData = ["Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"]
+        languageData = ["Arabic", "Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portuguese", "Russian", "Spanish", "Turkish"]
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
         // Do any additional setup after loading the view.
