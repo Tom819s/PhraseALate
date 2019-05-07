@@ -84,37 +84,37 @@ class ThirdViewController: UIViewController {
 
     func languageIntToAPIStr(){
         switch (chosenLanguageInt){
-            //"Spanish", "German", "Turkish", "Dutch", "French", "Finnish", "Russian"
+            //"Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"
             case 0:
-            chosenLanguageStr = "en-es"
-            voiceLanguage = "es-MX"
-            case 1:
-                chosenLanguageStr = "en-de"
-                voiceLanguage = "da-DK"
-            case 2:
-                chosenLanguageStr = "en-tr"
-                voiceLanguage = "tr-TR"
-            case 3:
                 chosenLanguageStr = "en-nl"
                 voiceLanguage = "nl-NL"
-            case 4:
-                chosenLanguageStr = "en-fr"
-                voiceLanguage = "fr-FR"
-            case 5:
+            case 1:
                 chosenLanguageStr = "en-fi"
                 voiceLanguage = "fi-FI"
-            case 6:
-                chosenLanguageStr = "en-ru"
-                voiceLanguage = "ru-RU"
-            case 7:
-                chosenLanguageStr = "en-pt"
-                voiceLanguage = "pt-BR"
-            case 8:
+            case 2:
+                chosenLanguageStr = "en-fr"
+                voiceLanguage = "fr-FR"
+            case 3:
+                chosenLanguageStr = "en-de"
+                voiceLanguage = "da-DK"
+            case 4:
                 chosenLanguageStr = "hi"
                 voiceLanguage = "hi-IN"
-            case 9:
+            case 5:
                 chosenLanguageStr = "ko"
                 voiceLanguage = "ko-KR"
+            case 6:
+                chosenLanguageStr = "en-pt"
+                voiceLanguage = "pt-BR"
+            case 7:
+                chosenLanguageStr = "en-ru"
+                voiceLanguage = "ru-RU"
+            case 8:
+                chosenLanguageStr = "en-es"
+                voiceLanguage = "es-MX"
+            case 9:
+                chosenLanguageStr = "en-tr"
+                voiceLanguage = "tr-TR"
             default:
                 chosenLanguageStr = "en-es"
         }
