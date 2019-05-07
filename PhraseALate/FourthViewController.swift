@@ -22,7 +22,6 @@ class FourthViewController: UIViewController, UITextViewDelegate {
         textEnter.delegate = self
         textEnter.text = "Please Enter What You Want To Translate"
         textEnter.textColor = UIColor.lightGray
-        print(chosenLanguage)
 
         // Do any additional setup after loading the view.
     }
@@ -54,8 +53,8 @@ class FourthViewController: UIViewController, UITextViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let thirdController = segue.destination as! ThirdViewController
-        
-        thirdController.chosenPhrase = self.stringToTrans
+        let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
+        thirdController.chosenPhrase = parsedString
         thirdController.chosenLanguageInt = self.chosenLanguage
     }
     
