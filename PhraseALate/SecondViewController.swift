@@ -26,6 +26,8 @@ class SecondViewController: UIViewController {
     
     
     var stringToTrans = String()
+    var chosenLanguage = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +37,7 @@ class SecondViewController: UIViewController {
         let thirdController = segue.destination as! ThirdViewController
         
         thirdController.chosenPhrase = self.stringToTrans
-        print(thirdController.chosenPhrase)
-        print(self.stringToTrans)
+        thirdController.chosenLanguageInt = chosenLanguage
     }
     
 
