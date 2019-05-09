@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F0B58FC2250AEC20081AAFB /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B58FB2250AEC20081AAFB /* FourthViewController.swift */; };
-		3F0B58FE2250BD850081AAFB /* langPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B58FD2250BD850081AAFB /* langPickViewController.swift */; };
+		3F0B58FC2250AEC20081AAFB /* EnterTranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */; };
+		3F0B58FE2250BD850081AAFB /* LanguagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */; };
 		3F19712F224FA7B20033E9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19712E224FA7B20033E9E9 /* AppDelegate.swift */; };
-		3F197131224FA7B20033E9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197130224FA7B20033E9E9 /* ViewController.swift */; };
+		3F197131224FA7B20033E9E9 /* TitlePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197130224FA7B20033E9E9 /* TitlePageController.swift */; };
 		3F197134224FA7B20033E9E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F197132224FA7B20033E9E9 /* Main.storyboard */; };
 		3F197136224FA7B30033E9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F197135224FA7B30033E9E9 /* Assets.xcassets */; };
 		3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */; };
-		3F19714522502DD30033E9E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714422502DD30033E9E9 /* SecondViewController.swift */; };
-		3F19714722502E670033E9E9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714622502E670033E9E9 /* ThirdViewController.swift */; };
-		3F620DA72281E6DD00F25E3B /* appBackgroundBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */; };
+		3F19714522502DD30033E9E9 /* PhraseSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714422502DD30033E9E9 /* PhraseSelectController.swift */; };
+		3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714622502E670033E9E9 /* TranslateResultsController.swift */; };
+		3F620DAB22846A6000F25E3B /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F0B58FB2250AEC20081AAFB /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		3F0B58FD2250BD850081AAFB /* langPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langPickViewController.swift; sourceTree = "<group>"; };
+		3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTranslationController.swift; sourceTree = "<group>"; };
+		3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerController.swift; sourceTree = "<group>"; };
 		3F19712B224FA7B20033E9E9 /* PhraseALate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhraseALate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F19712E224FA7B20033E9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F197130224FA7B20033E9E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F197130224FA7B20033E9E9 /* TitlePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePageController.swift; sourceTree = "<group>"; };
 		3F197133224FA7B20033E9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F197135224FA7B30033E9E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F197138224FA7B30033E9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F19713A224FA7B30033E9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F19714422502DD30033E9E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		3F19714622502E670033E9E9 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appBackgroundBlue.png; path = ../../../Downloads/appBackgroundBlue.png; sourceTree = "<group>"; };
+		3F19714422502DD30033E9E9 /* PhraseSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseSelectController.swift; sourceTree = "<group>"; };
+		3F19714622502E670033E9E9 /* TranslateResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResultsController.swift; sourceTree = "<group>"; };
+		3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +66,15 @@
 			children = (
 				3F19712E224FA7B20033E9E9 /* AppDelegate.swift */,
 				3F197132224FA7B20033E9E9 /* Main.storyboard */,
-				3F197130224FA7B20033E9E9 /* ViewController.swift */,
-				3F19714422502DD30033E9E9 /* SecondViewController.swift */,
-				3F19714622502E670033E9E9 /* ThirdViewController.swift */,
-				3F0B58FB2250AEC20081AAFB /* FourthViewController.swift */,
-				3F0B58FD2250BD850081AAFB /* langPickViewController.swift */,
-				3F620DA62281E6DD00F25E3B /* appBackgroundBlue.png */,
+				3F197130224FA7B20033E9E9 /* TitlePageController.swift */,
+				3F19714422502DD30033E9E9 /* PhraseSelectController.swift */,
+				3F19714622502E670033E9E9 /* TranslateResultsController.swift */,
+				3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */,
+				3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
 				3F19713A224FA7B30033E9E9 /* Info.plist */,
+				3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */,
 			);
 			path = PhraseALate;
 			sourceTree = "<group>";
@@ -138,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */,
-				3F620DA72281E6DD00F25E3B /* appBackgroundBlue.png in Resources */,
 				3F197136224FA7B30033E9E9 /* Assets.xcassets in Resources */,
 				3F197134224FA7B20033E9E9 /* Main.storyboard in Resources */,
 			);
@@ -151,12 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F19714522502DD30033E9E9 /* SecondViewController.swift in Sources */,
-				3F0B58FE2250BD850081AAFB /* langPickViewController.swift in Sources */,
-				3F197131224FA7B20033E9E9 /* ViewController.swift in Sources */,
-				3F19714722502E670033E9E9 /* ThirdViewController.swift in Sources */,
+				3F19714522502DD30033E9E9 /* PhraseSelectController.swift in Sources */,
+				3F0B58FE2250BD850081AAFB /* LanguagePickerController.swift in Sources */,
+				3F197131224FA7B20033E9E9 /* TitlePageController.swift in Sources */,
+				3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */,
 				3F19712F224FA7B20033E9E9 /* AppDelegate.swift in Sources */,
-				3F0B58FC2250AEC20081AAFB /* FourthViewController.swift in Sources */,
+				3F620DAB22846A6000F25E3B /* SpeechRecognition.swift in Sources */,
+				3F0B58FC2250AEC20081AAFB /* EnterTranslationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
