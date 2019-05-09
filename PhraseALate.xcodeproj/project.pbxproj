@@ -71,10 +71,10 @@
 				3F19714622502E670033E9E9 /* TranslateResultsController.swift */,
 				3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */,
 				3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */,
+				3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
 				3F19713A224FA7B30033E9E9 /* Info.plist */,
-				3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */,
 			);
 			path = PhraseALate;
 			sourceTree = "<group>";
