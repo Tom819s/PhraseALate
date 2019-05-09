@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title Page Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TitlePageController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="596" y="133"/>
         </scene>
-        <!--Lang Pick View Controller-->
+        <!--Language Picker Controller-->
         <scene sceneID="vT1-Sf-Eih">
             <objects>
-                <viewController id="fc2-3f-Ets" customClass="langPickViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fc2-3f-Ets" customClass="LanguagePickerController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6N9-bL-vAk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1356" y="133"/>
         </scene>
-        <!--Fourth View Controller-->
+        <!--Enter Translation Controller-->
         <scene sceneID="hw8-FA-kD6">
             <objects>
-                <viewController id="jRq-cw-dO3" customClass="FourthViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jRq-cw-dO3" customClass="EnterTranslationController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NBf-1x-qy4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
                                     <action selector="translatePressed:" destination="jRq-cw-dO3" eventType="touchUpInside" id="GKK-2s-WYD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJv-Kh-cZX">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJv-Kh-cZX">
                                 <rect key="frame" x="156" y="81" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="2117.5999999999999" y="-634.632683658171"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Phrase Select Controller-->
         <scene sceneID="2xq-ep-bY1">
             <objects>
-                <viewController id="gNY-l1-fSN" customClass="SecondViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gNY-l1-fSN" customClass="PhraseSelectController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Psa-Sl-y8S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="2118" y="133"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Translate Results Controller-->
         <scene sceneID="Uqy-m4-rXN">
             <objects>
-                <viewController id="JCx-sc-Ehl" customClass="ThirdViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JCx-sc-Ehl" customClass="TranslateResultsController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EJW-PR-LRi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

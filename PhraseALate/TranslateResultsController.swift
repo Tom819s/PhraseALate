@@ -9,8 +9,8 @@
 import UIKit
 import AVFoundation
 
-class ThirdViewController: UIViewController {
-
+class TranslateResultsController: UIViewController {
+    
     @IBOutlet weak var translatedView: UILabel!
     @IBOutlet weak var phraseView: UILabel!
     
@@ -31,7 +31,7 @@ class ThirdViewController: UIViewController {
         print(chosenLanguageInt)
         languageIntToAPIStr()
         translate()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +49,7 @@ class ThirdViewController: UIViewController {
         let url = URL(string: urlString)!
         
         //https://translate.yandex.net/api/v1.5/tr.json/getLangs
-
+        
         let task = URLSession.shared.dataTask(with: url)
         { (data, response, error) in
             if let data = data
@@ -60,10 +60,10 @@ class ThirdViewController: UIViewController {
                     self.translatedString = text.text[0]
                     DispatchQueue.main.async
                         {
-                        self.translatedView.text = self.translatedString
-                        self.hasTranslated = true
-                        self.speakOutLoud()
-                        }
+                            self.translatedView.text = self.translatedString
+                            self.hasTranslated = true
+                            self.speakOutLoud()
+                    }
                     
                     
                 }
@@ -73,7 +73,7 @@ class ThirdViewController: UIViewController {
                     self.translatedView.text = "Error: Try Again"
                 }
             }
-        }.resume()
+            }.resume()
     }
     
     @IBAction func speakAgainPressed(_ sender: Any) {
@@ -81,45 +81,45 @@ class ThirdViewController: UIViewController {
             self.speakOutLoud()
         }
     }
-
+    
     func languageIntToAPIStr(){
         switch (chosenLanguageInt){
-            //"Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"
-            case 0:
-                chosenLanguageStr = "ar"
-                voiceLanguage = "ar-SA"
-            case 1:
-                chosenLanguageStr = "en-nl"
-                voiceLanguage = "nl-NL"
-            case 2:
-                chosenLanguageStr = "en-fi"
-                voiceLanguage = "fi-FI"
-            case 3:
-                chosenLanguageStr = "en-fr"
-                voiceLanguage = "fr-FR"
-            case 4:
-                chosenLanguageStr = "en-de"
-                voiceLanguage = "da-DK"
-            case 5:
-                chosenLanguageStr = "hi"
-                voiceLanguage = "hi-IN"
-            case 6:
-                chosenLanguageStr = "ko"
-                voiceLanguage = "ko-KR"
-            case 7:
-                chosenLanguageStr = "en-pt"
-                voiceLanguage = "pt-BR"
-            case 8:
-                chosenLanguageStr = "en-ru"
-                voiceLanguage = "ru-RU"
-            case 9:
-                chosenLanguageStr = "en-es"
-                voiceLanguage = "es-MX"
-            case 10:
-                chosenLanguageStr = "en-tr"
-                voiceLanguage = "tr-TR"
-            default:
-                chosenLanguageStr = "en-es"
+        //"Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"
+        case 0:
+            chosenLanguageStr = "ar"
+            voiceLanguage = "ar-SA"
+        case 1:
+            chosenLanguageStr = "en-nl"
+            voiceLanguage = "nl-NL"
+        case 2:
+            chosenLanguageStr = "en-fi"
+            voiceLanguage = "fi-FI"
+        case 3:
+            chosenLanguageStr = "en-fr"
+            voiceLanguage = "fr-FR"
+        case 4:
+            chosenLanguageStr = "en-de"
+            voiceLanguage = "da-DK"
+        case 5:
+            chosenLanguageStr = "hi"
+            voiceLanguage = "hi-IN"
+        case 6:
+            chosenLanguageStr = "ko"
+            voiceLanguage = "ko-KR"
+        case 7:
+            chosenLanguageStr = "en-pt"
+            voiceLanguage = "pt-BR"
+        case 8:
+            chosenLanguageStr = "en-ru"
+            voiceLanguage = "ru-RU"
+        case 9:
+            chosenLanguageStr = "en-es"
+            voiceLanguage = "es-MX"
+        case 10:
+            chosenLanguageStr = "en-tr"
+            voiceLanguage = "tr-TR"
+        default:
+            chosenLanguageStr = "en-es"
         }
     }
     
@@ -132,13 +132,13 @@ class ThirdViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

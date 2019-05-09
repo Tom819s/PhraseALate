@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FourthViewController: UIViewController, UITextViewDelegate {
+class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textEnter: UITextView!
     
@@ -22,7 +22,7 @@ class FourthViewController: UIViewController, UITextViewDelegate {
         textEnter.delegate = self
         textEnter.text = "Please Enter What You Want To Translate"
         textEnter.textColor = UIColor.lightGray
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +42,7 @@ class FourthViewController: UIViewController, UITextViewDelegate {
             textEnter.textColor = UIColor.lightGray
         }
     }
-
+    
     @IBAction func translatePressed(_ sender: Any) {
         
         self.stringToTrans = textEnter.text.replacingOccurrences(of: "\n", with: "%20")
@@ -52,20 +52,25 @@ class FourthViewController: UIViewController, UITextViewDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let thirdController = segue.destination as! ThirdViewController
-        let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
-        thirdController.chosenPhrase = parsedString
-        thirdController.chosenLanguageInt = self.chosenLanguage
+        if !(sender is UIButton)
+        {
+            let resultsController = segue.destination as! TranslateResultsController
+            let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
+            resultsController.chosenPhrase = parsedString
+            print(resultsController.chosenPhrase)
+            resultsController.chosenLanguageInt = self.chosenLanguage
+        }
+        
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

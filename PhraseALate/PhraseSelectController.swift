@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-
+class PhraseSelectController: UIViewController {
+    
     @IBAction func bathroomPressed(_ sender: Any) {
         stringToTrans = "Where is the toilet?"
     }
@@ -30,30 +30,30 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let senderButton = sender as! UIButton
         if senderButton.tag != 1
         {
-        let thirdController = segue.destination as! ThirdViewController
-        
-        thirdController.chosenPhrase = self.stringToTrans
+            let thirdController = segue.destination as! TranslateResultsController
+            
+            thirdController.chosenPhrase = self.stringToTrans
             thirdController.chosenLanguageInt = chosenLanguage
             
         }
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

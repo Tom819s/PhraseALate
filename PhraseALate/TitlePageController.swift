@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class TitlePageController: UIViewController
 {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var phrasesButton: UIButton!
@@ -24,12 +24,12 @@ class ViewController: UIViewController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pickController = segue.destination as! langPickViewController
+        let pickController = segue.destination as! LanguagePickerController
         
         pickController.isPhrase = phraseChose
         pickController.isTranslate = transChose
     }
-
+    
     
     @IBAction func phrasePressed(_ sender: Any) {        phraseChose = true
         transChose = false

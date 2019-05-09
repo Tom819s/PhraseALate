@@ -8,8 +8,8 @@
 
 import UIKit
 
-class langPickViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var languagePicker: UIPickerView!
     var isTranslate = false
     var isPhrase = false
@@ -33,23 +33,23 @@ class langPickViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        languageData = ["Arabic", "Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portuguese", "Russian", "Spanish", "Turkish"]
+        languageData = ["Arabic", "Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"]
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //setup code for
+        //setup code for
         //seguelabelTest.text = languagePicker.selectedRowInComponent(0)
         if (isTranslate) //if translating phrase we need to set the target viewcontroller's language field
         {
-            let translateController = segue.destination as! FourthViewController
+            let translateController = segue.destination as! EnterTranslationController
             translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
         }
         else
         {
-            let translateController = segue.destination as! SecondViewController
+            let translateController = segue.destination as! PhraseSelectController
             translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
         }
         //set destination viewcontroller to recieve pickerView's language value for API request
@@ -61,19 +61,19 @@ class langPickViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             self.performSegue(withIdentifier: "translate", sender: nil)
         }
         else{
-        self.performSegue(withIdentifier: "phrase", sender: nil)
+            self.performSegue(withIdentifier: "phrase", sender: nil)
         }
         
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
