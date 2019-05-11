@@ -25,31 +25,38 @@ class SpeechRecognition: UIViewController {
     }
     
     var translatedStr = String()
+    var request = SFSpeechAudioBufferRecognitionRequest()
     let audioEngine = AVAudioEngine()
     let speechRecognizer = SFSpeechRecognizer()
-    let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    
-    
-    func requestTranscribePermissions(){
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
-            DispatchQueue.main.async {
-                if authStatus == .authorized {
-                    print("Good to go!")
-                } else {
-                    print("Transcription permission was declined.")
+        SFSpeechRecognizer.requestAuthorization {
+            [unowned self] (authStatus) in
+            switch authStatus {
+            case .authorized:
+                do {
+                    try self.startRecording()
+                } catch let error {
+                    print("There was a problem starting recording: \(error.localizedDescription)")
                 }
+            case .denied:
+                print("Speech recognition authorization denied")
+            case .restricted:
+                print("Not available on this device")
+            case .notDetermined:
+                print("Not determined")
             }
         }
     }
     
+    
     func startRecording() throws{
+        
+        request = SFSpeechAudioBufferRecognitionRequest()
         let node = audioEngine.inputNode
+        node.removeTap(onBus: 0)
         let recordingFormat = node.outputFormat(forBus: 0)
         
         // 2
@@ -74,7 +81,7 @@ class SpeechRecognition: UIViewController {
     func stopRecording() {
         audioEngine.stop()
         request.endAudio()
-        recognitionTask?.cancel()
+        recognitionTask?.finish()
     }
     
     
