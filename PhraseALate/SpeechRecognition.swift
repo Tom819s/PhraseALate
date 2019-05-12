@@ -13,6 +13,8 @@ class SpeechRecognition: UIViewController {
     
     @IBOutlet weak var transcriptionLabel: UILabel!
     
+    @IBAction func translateButtonPressed(_ sender: Any) {
+    }
     @IBAction func recordButton(_ sender: Any) {        do {
         try self.startRecording()
     } catch let error {
@@ -68,22 +70,38 @@ class SpeechRecognition: UIViewController {
         
         audioEngine.prepare()
         try audioEngine.start()
-        
         recognitionTask = speechRecognizer?.recognitionTask(with: request) {
             [unowned self]
             (result, _) in
             if let transcription = result?.bestTranscription {
                 self.transcriptionLabel.text = transcription.formattedString
             }
+            
         }
     }
     
     func stopRecording() {
         audioEngine.stop()
-        request.endAudio()
         recognitionTask?.finish()
+        recognitionTask = nil
+        audioEngine.inputNode.removeTap(onBus: 0)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let resultsController = segue.destination as! TranslateResultsController
+            let phrase = transcriptionLabel.text!
+            if phrase != ""
+            {
+                resultsController.chosenPhrase = phrase
+            }
+            else
+            {
+                resultsController.chosenPhrase = "Error Dictating Speech"
+            }
+            resultsController.chosenLanguageInt = 10
+        
+    }
     
     /*
      // MARK: - Navigation

@@ -26,7 +26,6 @@ class TranslateResultsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         phraseView.text = chosenPhrase
         print(chosenLanguageInt)
         languageIntToAPIStr()
@@ -120,12 +119,14 @@ class TranslateResultsController: UIViewController {
             voiceLanguage = "tr-TR"
         default:
             chosenLanguageStr = "en-es"
+            voiceLanguage = "es-MX"
         }
     }
     
     func speakOutLoud(){
         let translatedNoPunctuation = translatedString.components(separatedBy: CharacterSet.punctuationCharacters).joined()
         let utterance = AVSpeechUtterance(string: translatedNoPunctuation)
+        utterance.volume = 1.0
         utterance.rate = 0.4
         utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
         speechSynth.speak(utterance)

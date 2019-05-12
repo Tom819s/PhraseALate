@@ -39,7 +39,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         if (textEnter.text == "")
         {
             textEnter.text = "Please Enter What You Want To Translate"
-            textEnter.textColor = UIColor.lightGray
+            textEnter.textColor = UIColor.white
         }
     }
     

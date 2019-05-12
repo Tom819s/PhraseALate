@@ -136,11 +136,10 @@
                                     <action selector="recordButton:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="TaN-4S-gfl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-Yd-vaI">
-                                <rect key="frame" x="68" y="78" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-Yd-vaI">
+                                <rect key="frame" x="68" y="78" width="240" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U4-vz-tXp">
@@ -149,6 +148,15 @@
                                 <state key="normal" title="Stop Recording"/>
                                 <connections>
                                     <action selector="stopRecordButton:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="Kyf-wD-4Qy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwO-bz-E58">
+                                <rect key="frame" x="155" y="402" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Translate"/>
+                                <connections>
+                                    <action selector="translateButtonPressed:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="vpN-cU-Gfk"/>
+                                    <segue destination="JCx-sc-Ehl" kind="show" id="9yA-OU-frL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,21 +170,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znp-nA-ixJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="849.62518740629696"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tz4-DK-yoz">
-            <objects>
-                <viewController id="PmP-O9-aHi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LuU-l1-PTe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="56j-oe-9XT"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3aW-MB-UGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2118" y="850"/>
         </scene>
         <!--Enter Translation Controller-->
         <scene sceneID="hw8-FA-kD6">
@@ -407,7 +400,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q8i-fs-KFk"/>
+        <segue reference="9yA-OU-frL"/>
         <segue reference="qkd-Q8-fHy"/>
     </inferredMetricsTieBreakers>
 </document>
