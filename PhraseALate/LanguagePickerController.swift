@@ -13,6 +13,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var languagePicker: UIPickerView!
     var isTranslate = false
     var isPhrase = false
+    var isVoice = false
     
     var languageData: [String] = [String]()
     
@@ -47,10 +48,15 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
             let translateController = segue.destination as! EnterTranslationController
             translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
         }
-        else
+        else if (isPhrase)
         {
             let translateController = segue.destination as! PhraseSelectController
             translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
+        }
+        else if (isVoice)
+        {
+            let speechController = segue.destination as! SpeechRecognition
+            speechController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
         }
         //set destination viewcontroller to recieve pickerView's language value for API request
     }
@@ -60,8 +66,11 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         if (isTranslate){
             self.performSegue(withIdentifier: "translate", sender: nil)
         }
-        else{
+        else if (isPhrase){
             self.performSegue(withIdentifier: "phrase", sender: nil)
+        }
+        else if (isVoice){
+            self.performSegue(withIdentifier: "voice", sender: nil)
         }
         
     }

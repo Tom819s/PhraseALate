@@ -38,7 +38,6 @@ class PhraseSelectController: UIViewController {
         if senderButton.tag != 1
         {
             let thirdController = segue.destination as! TranslateResultsController
-            
             thirdController.chosenPhrase = self.stringToTrans
             thirdController.chosenLanguageInt = chosenLanguage
             

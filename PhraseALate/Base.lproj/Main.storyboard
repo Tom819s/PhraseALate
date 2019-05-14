@@ -57,7 +57,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xUQ-Wq-v2d" kind="show" id="px1-iw-zo8"/>
+                                    <action selector="voicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkC-nd-Ggf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,11 +114,12 @@
                         <outlet property="languagePicker" destination="XuN-ly-kIc" id="t0o-0s-X7h"/>
                         <segue destination="gNY-l1-fSN" kind="show" identifier="phrase" id="Ee8-mM-kZQ"/>
                         <segue destination="jRq-cw-dO3" kind="show" identifier="translate" id="LIf-Rh-KaV"/>
+                        <segue destination="xUQ-Wq-v2d" kind="show" identifier="voice" id="CDs-XL-Jvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNf-9v-1Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="133"/>
+            <point key="canvasLocation" x="1348" y="133"/>
         </scene>
         <!--Speech Recognition-->
         <scene sceneID="V8f-Eg-Oqu">
@@ -128,14 +129,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-ZZ-jdo">
-                                <rect key="frame" x="163" y="253" width="49" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="recordButton:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="TaN-4S-gfl"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-Yd-vaI">
                                 <rect key="frame" x="68" y="78" width="240" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -143,20 +136,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U4-vz-tXp">
-                                <rect key="frame" x="134" y="322" width="106" height="46"/>
+                                <rect key="frame" x="135" y="296" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop Recording"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Stop Recording">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="stopRecordButton:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="Kyf-wD-4Qy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwO-bz-E58">
-                                <rect key="frame" x="155" y="402" width="63" height="30"/>
+                                <rect key="frame" x="157" y="334" width="63" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Translate"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Translate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="translateButtonPressed:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="vpN-cU-Gfk"/>
                                     <segue destination="JCx-sc-Ehl" kind="show" id="9yA-OU-frL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-ZZ-jdo">
+                                <rect key="frame" x="152" y="258" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButton:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="TaN-4S-gfl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znp-nA-ixJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="849.62518740629696"/>
+            <point key="canvasLocation" x="2118" y="863"/>
         </scene>
         <!--Enter Translation Controller-->
         <scene sceneID="hw8-FA-kD6">
@@ -400,6 +411,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Ee8-mM-kZQ"/>
         <segue reference="9yA-OU-frL"/>
         <segue reference="qkd-Q8-fHy"/>
     </inferredMetricsTieBreakers>

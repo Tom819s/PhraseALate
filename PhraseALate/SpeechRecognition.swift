@@ -31,26 +31,10 @@ class SpeechRecognition: UIViewController {
     let audioEngine = AVAudioEngine()
     let speechRecognizer = SFSpeechRecognizer()
     var recognitionTask: SFSpeechRecognitionTask?
+    var chosenLanguage = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SFSpeechRecognizer.requestAuthorization {
-            [unowned self] (authStatus) in
-            switch authStatus {
-            case .authorized:
-                do {
-                    try self.startRecording()
-                } catch let error {
-                    print("There was a problem starting recording: \(error.localizedDescription)")
-                }
-            case .denied:
-                print("Speech recognition authorization denied")
-            case .restricted:
-                print("Not available on this device")
-            case .notDetermined:
-                print("Not determined")
-            }
-        }
     }
     
     
@@ -94,13 +78,13 @@ class SpeechRecognition: UIViewController {
             if phrase != ""
             {
                 resultsController.chosenPhrase = phrase
+                resultsController.chosenLanguageInt = self.chosenLanguage
             }
             else
             {
                 resultsController.chosenPhrase = "Error Dictating Speech"
             }
             resultsController.chosenLanguageInt = 10
-        
     }
     
     /*

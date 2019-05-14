@@ -30,7 +30,6 @@ class TranslateResultsController: UIViewController {
         print(chosenLanguageInt)
         languageIntToAPIStr()
         translate()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -63,8 +62,6 @@ class TranslateResultsController: UIViewController {
                             self.hasTranslated = true
                             self.speakOutLoud()
                     }
-                    
-                    
                 }
                 catch let jsonErr
                 {
@@ -75,8 +72,10 @@ class TranslateResultsController: UIViewController {
             }.resume()
     }
     
-    @IBAction func speakAgainPressed(_ sender: Any) {
-        if hasTranslated{
+    @IBAction func speakAgainPressed(_ sender: Any)
+    {
+        if hasTranslated
+        {
             self.speakOutLoud()
         }
     }
