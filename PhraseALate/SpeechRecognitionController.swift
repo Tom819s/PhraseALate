@@ -16,19 +16,32 @@ class SpeechRecognitionController: UIViewController {
     @IBAction func translateButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func recordButton(_ sender: Any) {        do {
-        try self.startRecording()
-    } catch let error {
-        print("There was a problem starting recording: \(error.localizedDescription)")
+    @IBAction func recordButton(_ sender: Any) {
+        if (!isRecording)
+        {
+            do
+            {
+                try self.startRecording()
+            }
+            catch let error
+            {
+                print("There was a problem starting recording: \(error.localizedDescription)")
+            }
+            isRecording = true
+            recordButton.backgroundColor = UIColor.gray
+            recordButton.setTitle("Stop", for: .normal)
         }
+        else{
+            stopRecording()
+            isRecording = false
+            recordButton.backgroundColor = UIColor.red
+            recordButton.setTitle("Record", for: .normal)
+        }
+        
     }
     
-    @IBAction func stopRecordButton(_ sender: Any) {
-        stopRecording()
-    }
     
     @IBOutlet weak var translateButton: UIButton!
-    @IBOutlet weak var stopRecordButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
     var translatedStr = String()
@@ -37,12 +50,12 @@ class SpeechRecognitionController: UIViewController {
     let speechRecognizer = SFSpeechRecognizer()
     var recognitionTask: SFSpeechRecognitionTask?
     var chosenLanguage = 100
+    var isRecording = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         translateButton.layer.cornerRadius = 5
-        recordButton.layer.cornerRadius = 5
-        stopRecordButton.layer.cornerRadius = 5
+        recordButton.layer.cornerRadius = recordButton.bounds.size.height/2
     }
     
     
@@ -81,18 +94,18 @@ class SpeechRecognitionController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let resultsController = segue.destination as! TranslateResultsController
-            let phrase = transcriptionLabel.text!
-            if phrase != ""
-            {
-                resultsController.chosenPhrase = phrase
-                resultsController.chosenLanguageInt = self.chosenLanguage
-            }
-            else
-            {
-                resultsController.chosenPhrase = "Error Dictating Speech"
-            }
-            resultsController.chosenLanguageInt = 10
+        let resultsController = segue.destination as! TranslateResultsController
+        let phrase = transcriptionLabel.text!
+        if phrase != ""
+        {
+            resultsController.chosenPhrase = phrase
+            resultsController.chosenLanguageInt = self.chosenLanguage
+        }
+        else
+        {
+            resultsController.chosenPhrase = "Error Dictating Speech"
+        }
+        resultsController.chosenLanguageInt = 10
     }
     
     /*
