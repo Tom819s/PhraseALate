@@ -11,6 +11,9 @@ import UIKit
 class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var languagePicker: UIPickerView!
+    
+    @IBOutlet weak var chooseLangButton: UIButton!
+    
     var isTranslate = false
     var isPhrase = false
     var isVoice = false
@@ -26,7 +29,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor.black])
+        return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.294, green: 0.463, blue: 0.918, alpha: 1.0)])
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,6 +40,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         languageData = ["Arabic", "Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"]
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
+        chooseLangButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
@@ -55,7 +59,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         else if (isVoice)
         {
-            let speechController = segue.destination as! SpeechRecognition
+            let speechController = segue.destination as! SpeechRecognitionController
             speechController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
         }
         //set destination viewcontroller to recieve pickerView's language value for API request

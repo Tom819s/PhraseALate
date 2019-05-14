@@ -9,12 +9,13 @@
 import UIKit
 import Speech
 
-class SpeechRecognition: UIViewController {
+class SpeechRecognitionController: UIViewController {
     
     @IBOutlet weak var transcriptionLabel: UILabel!
     
     @IBAction func translateButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func recordButton(_ sender: Any) {        do {
         try self.startRecording()
     } catch let error {
@@ -26,6 +27,10 @@ class SpeechRecognition: UIViewController {
         stopRecording()
     }
     
+    @IBOutlet weak var translateButton: UIButton!
+    @IBOutlet weak var stopRecordButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    
     var translatedStr = String()
     var request = SFSpeechAudioBufferRecognitionRequest()
     let audioEngine = AVAudioEngine()
@@ -35,6 +40,9 @@ class SpeechRecognition: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        translateButton.layer.cornerRadius = 5
+        recordButton.layer.cornerRadius = 5
+        stopRecordButton.layer.cornerRadius = 5
     }
     
     

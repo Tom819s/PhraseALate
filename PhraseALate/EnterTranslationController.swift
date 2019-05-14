@@ -12,13 +12,17 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textEnter: UITextView!
     
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var translateButton: UIButton!
+    
     var stringToTrans = String()
     var chosenLanguage = Int()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        menuButton.layer.cornerRadius = 5
+        translateButton.layer.cornerRadius = 5
         textEnter.delegate = self
         textEnter.text = "Please Enter What You Want To Translate"
         textEnter.textColor = UIColor.lightGray
@@ -31,7 +35,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         if (textEnter.textColor == UIColor.lightGray)
         {
             textEnter.text = ""
-            textEnter.textColor = UIColor.black
+            textEnter.textColor = UIColor.init(red: 0.294, green: 0.463, blue: 0.918, alpha: 1.0)
         }
     }
     

@@ -13,6 +13,7 @@ class TitlePageController: UIViewController
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var phrasesButton: UIButton!
     @IBOutlet weak var translateButton: UIButton!
+    @IBOutlet weak var voiceButton: UIButton!
     
     var phraseChose = false
     var transChose = false
@@ -22,6 +23,10 @@ class TitlePageController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //4B76EA
+        phrasesButton.layer.cornerRadius = 5
+        translateButton.layer.cornerRadius = 5
+        voiceButton.layer.cornerRadius = 5
         
     }
     

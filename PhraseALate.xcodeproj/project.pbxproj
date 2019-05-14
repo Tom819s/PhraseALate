@@ -16,7 +16,7 @@
 		3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */; };
 		3F19714522502DD30033E9E9 /* PhraseSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714422502DD30033E9E9 /* PhraseSelectController.swift */; };
 		3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714622502E670033E9E9 /* TranslateResultsController.swift */; };
-		3F620DAB22846A6000F25E3B /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */; };
+		3F620DAB22846A6000F25E3B /* SpeechRecognitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		3F19713A224FA7B30033E9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F19714422502DD30033E9E9 /* PhraseSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseSelectController.swift; sourceTree = "<group>"; };
 		3F19714622502E670033E9E9 /* TranslateResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResultsController.swift; sourceTree = "<group>"; };
-		3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
+		3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				3F19714622502E670033E9E9 /* TranslateResultsController.swift */,
 				3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */,
 				3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */,
-				3F620DAA22846A6000F25E3B /* SpeechRecognition.swift */,
+				3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
 				3F19713A224FA7B30033E9E9 /* Info.plist */,
@@ -155,7 +155,7 @@
 				3F197131224FA7B20033E9E9 /* TitlePageController.swift in Sources */,
 				3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */,
 				3F19712F224FA7B20033E9E9 /* AppDelegate.swift in Sources */,
-				3F620DAB22846A6000F25E3B /* SpeechRecognition.swift in Sources */,
+				3F620DAB22846A6000F25E3B /* SpeechRecognitionController.swift in Sources */,
 				3F0B58FC2250AEC20081AAFB /* EnterTranslationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

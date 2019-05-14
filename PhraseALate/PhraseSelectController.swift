@@ -24,12 +24,23 @@ class PhraseSelectController: UIViewController {
         stringToTrans = "I Need Medical Attention"
     }
     
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var firstButton: UIButton!
     
+    @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    
+    @IBOutlet weak var thirdButton: UIButton!
     var stringToTrans = String()
     var chosenLanguage = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuButton.layer.cornerRadius = 5
+        firstButton.layer.cornerRadius = 5
+        secondButton.layer.cornerRadius = 5
+        thirdButton.layer.cornerRadius = 5
+        fourthButton.layer.cornerRadius = 5
         
     }
     

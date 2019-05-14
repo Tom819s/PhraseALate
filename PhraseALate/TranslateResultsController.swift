@@ -14,7 +14,9 @@ class TranslateResultsController: UIViewController {
     @IBOutlet weak var translatedView: UILabel!
     @IBOutlet weak var phraseView: UILabel!
     
+    @IBOutlet weak var menuButton: UIButton!
     
+    @IBOutlet weak var replayButton: UIButton!
     
     var translatedString = String()
     var chosenPhrase = String()
@@ -27,7 +29,9 @@ class TranslateResultsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         phraseView.text = chosenPhrase
-        print(chosenLanguageInt)
+        menuButton.layer.cornerRadius = 5
+        replayButton.layer.cornerRadius = 5
+        
         languageIntToAPIStr()
         translate()
         // Do any additional setup after loading the view.
