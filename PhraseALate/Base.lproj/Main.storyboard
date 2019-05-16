@@ -325,33 +325,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70g-Og-Fh8">
-                                <rect key="frame" x="44" y="606" width="46" height="30"/>
+                                <rect key="frame" x="50" y="606" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Food"/>
                                 <connections>
                                     <action selector="tab1Pressed:" destination="gNY-l1-fSN" eventType="touchUpInside" id="8Y1-Dn-IvJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBa-bM-7F5">
-                                <rect key="frame" x="121" y="606" width="46" height="30"/>
+                                <rect key="frame" x="126" y="606" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Shop"/>
                                 <connections>
                                     <action selector="tab2Presed:" destination="gNY-l1-fSN" eventType="touchUpInside" id="VUl-hh-Rig"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-sH-InH">
-                                <rect key="frame" x="204" y="606" width="46" height="30"/>
+                                <rect key="frame" x="200" y="606" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Medical"/>
                                 <connections>
                                     <action selector="tab3Pressed:" destination="gNY-l1-fSN" eventType="touchUpInside" id="gFj-Ee-zkc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cK-Zq-dYb">
-                                <rect key="frame" x="285" y="606" width="46" height="30"/>
+                                <rect key="frame" x="293" y="606" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Lost"/>
                                 <connections>
                                     <action selector="tab4Pressed:" destination="gNY-l1-fSN" eventType="touchUpInside" id="Rlw-ck-a9h"/>
                                 </connections>
