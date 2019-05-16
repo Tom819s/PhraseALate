@@ -18,14 +18,21 @@ class TitlePageController: UIViewController
     var phraseChose = false
     var transChose = false
     var voiceChose = false
-    
+    let borderColor = UIColor.green.cgColor
+    let borderWidth : CGFloat = 2.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         phrasesButton.layer.cornerRadius = 5
+        phrasesButton.layer.borderWidth = borderWidth
+        phrasesButton.layer.borderColor = borderColor
         translateButton.layer.cornerRadius = 5
+        translateButton.layer.borderWidth = borderWidth
+        translateButton.layer.borderColor = borderColor
         voiceButton.layer.cornerRadius = 5
+        voiceButton.layer.borderWidth = borderWidth
+        voiceButton.layer.borderColor = borderColor
         
     }
     

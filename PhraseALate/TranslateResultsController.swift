@@ -25,13 +25,18 @@ class TranslateResultsController: UIViewController {
     var chosenLanguageStr = String()
     var hasTranslated = false
     let speechSynth = AVSpeechSynthesizer()
+    let borderColor = UIColor.green.cgColor
+    let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         phraseView.text = chosenPhrase
         menuButton.layer.cornerRadius = 5
+        menuButton.layer.borderWidth = borderWidth
+        menuButton.layer.borderColor = borderColor
         replayButton.layer.cornerRadius = 5
-        
+        replayButton.layer.borderWidth = borderWidth
+        replayButton.layer.borderColor = borderColor
         languageIntToAPIStr()
         translate()
         // Do any additional setup after loading the view.

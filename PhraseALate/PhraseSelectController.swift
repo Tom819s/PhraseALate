@@ -33,14 +33,26 @@ class PhraseSelectController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     var stringToTrans = String()
     var chosenLanguage = Int()
+    let borderColor = UIColor.green.cgColor
+    let borderWidth: CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.layer.cornerRadius = 5
+        menuButton.layer.borderWidth = borderWidth
+        menuButton.layer.borderColor = borderColor
         firstButton.layer.cornerRadius = 5
+        firstButton.layer.borderWidth = borderWidth
+        firstButton.layer.borderColor = borderColor
         secondButton.layer.cornerRadius = 5
+        secondButton.layer.borderWidth = borderWidth
+        secondButton.layer.borderColor = borderColor
         thirdButton.layer.cornerRadius = 5
+        thirdButton.layer.borderWidth = borderWidth
+        thirdButton.layer.borderColor = borderColor
         fourthButton.layer.cornerRadius = 5
+        fourthButton.layer.borderWidth = borderWidth
+        fourthButton.layer.borderColor = borderColor
         
     }
     

@@ -17,6 +17,8 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     var isTranslate = false
     var isPhrase = false
     var isVoice = false
+    let borderColor = UIColor.green.cgColor
+    let borderWidth : CGFloat = 2.0
     
     var languageData: [String] = [String]()
     
@@ -41,6 +43,8 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
         chooseLangButton.layer.cornerRadius = 5
+        chooseLangButton.layer.borderWidth = borderWidth
+        chooseLangButton.layer.borderColor = borderColor
         // Do any additional setup after loading the view.
     }
     

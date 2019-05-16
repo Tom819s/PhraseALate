@@ -30,12 +30,14 @@ class SpeechRecognitionController: UIViewController {
             isRecording = true
             recordButton.backgroundColor = UIColor.init(red: 0.557, green: 0.557, blue: 0.576, alpha: 1.0)
             // 0.557 0.557  0.576
+            //IOS Gray
             recordButton.setTitle("Stop", for: .normal)
         }
         else{
             stopRecording()
             isRecording = false
             recordButton.backgroundColor = UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0)
+            //Red
             recordButton.setTitle("Record", for: .normal)
         }
         
@@ -52,11 +54,17 @@ class SpeechRecognitionController: UIViewController {
     var recognitionTask: SFSpeechRecognitionTask?
     var chosenLanguage = 100
     var isRecording = false
+    let borderColor = UIColor.green.cgColor
+    let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         translateButton.layer.cornerRadius = 5
-        recordButton.layer.cornerRadius = recordButton.bounds.size.height/2 + 2
+        translateButton.layer.borderWidth = borderWidth
+        translateButton.layer.borderColor = borderColor
+        recordButton.layer.cornerRadius = recordButton.bounds.size.height
+        recordButton.layer.borderWidth = borderWidth
+        recordButton.layer.borderColor = borderColor
     }
     
     
