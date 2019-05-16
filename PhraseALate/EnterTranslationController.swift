@@ -17,7 +17,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     var stringToTrans = String()
     var chosenLanguage = Int()
-    let borderColor = UIColor.green.cgColor
+    let borderColor = UIColor.darkGray.cgColor
     let borderWidth : CGFloat = 2.0
     
     

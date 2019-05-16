@@ -17,7 +17,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     var isTranslate = false
     var isPhrase = false
     var isVoice = false
-    let borderColor = UIColor.green.cgColor
+    let borderColor = UIColor.darkGray.cgColor
     let borderWidth : CGFloat = 2.0
     
     var languageData: [String] = [String]()

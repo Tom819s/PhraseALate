@@ -54,7 +54,7 @@ class SpeechRecognitionController: UIViewController {
     var recognitionTask: SFSpeechRecognitionTask?
     var chosenLanguage = 100
     var isRecording = false
-    let borderColor = UIColor.green.cgColor
+    let borderColor = UIColor.darkGray.cgColor
     let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {

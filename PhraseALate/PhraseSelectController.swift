@@ -10,30 +10,15 @@ import UIKit
 
 class PhraseSelectController: UIViewController {
     
-    @IBAction func bathroomPressed(_ sender: Any) {
-        stringToTrans = "Where is the toilet?"
-    }
-    @IBAction func checksPressed(_ sender: Any) {
-        
-        stringToTrans = "Do You Take Traveler's Checks?"
-    }
-    @IBAction func lostPressed(_ sender: Any) {
-        stringToTrans = "I Am Lost"
-    }
-    @IBAction func medicalPressed(_ sender: Any) {
-        stringToTrans = "I Need Medical Attention"
-    }
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var firstButton: UIButton!
-    
-    @IBOutlet weak var fourthButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
-    
     @IBOutlet weak var thirdButton: UIButton!
-    var stringToTrans = String()
+    @IBOutlet weak var fourthButton: UIButton!
+    
     var chosenLanguage = Int()
-    let borderColor = UIColor.green.cgColor
+    let borderColor = UIColor.darkGray.cgColor
     let borderWidth: CGFloat = 2.0
     
     override func viewDidLoad() {
@@ -61,13 +46,54 @@ class PhraseSelectController: UIViewController {
         if senderButton.tag != 1
         {
             let thirdController = segue.destination as! TranslateResultsController
-            thirdController.chosenPhrase = self.stringToTrans
+            thirdController.chosenPhrase = senderButton.currentTitle!
             thirdController.chosenLanguageInt = chosenLanguage
             
         }
     }
     
     
+    @IBAction func tab1Pressed(_ sender: Any) {
+        firstButton.setTitle("Where is the bathroom?", for: .normal)
+        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        secondButton.setTitle("I need something to drink", for: .normal)
+        secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        thirdButton.setTitle("I am hungry", for: .normal)
+        thirdButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+        fourthButton.setTitle("I have dietary restrictions", for: .normal)
+        fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+    }
+    
+    @IBAction func tab2Presed(_ sender: Any) {
+        firstButton.setTitle("Do you take traveler's checks?", for: .normal)
+        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        secondButton.setTitle("I have US Dollars", for: .normal)
+        secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        thirdButton.setTitle("I cannot afford that", for: .normal)
+        thirdButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        fourthButton.setTitle("What is your best price?", for: .normal)
+        fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+    }
+    @IBAction func tab3Pressed(_ sender: Any) {
+        firstButton.setTitle("I need medical attention", for: .normal)
+        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        secondButton.setTitle("I feel sick", for: .normal)
+        secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        thirdButton.setTitle("I hurt where I am pointing", for: .normal)
+        thirdButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+        fourthButton.setTitle("I need to go to the hospital", for: .normal)
+        fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+    }
+    @IBAction func tab4Pressed(_ sender: Any) {
+        firstButton.setTitle("I am lost", for: .normal)
+        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        secondButton.setTitle("Where is the US consulate?", for: .normal)
+        secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        thirdButton.setTitle("I cannot find my passport", for: .normal)
+        thirdButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
+        fourthButton.setTitle("Do you know someone who speaks English?", for: .normal)
+        fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    }
     /*
      // MARK: - Navigation
      

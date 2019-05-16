@@ -25,7 +25,7 @@ class TranslateResultsController: UIViewController {
     var chosenLanguageStr = String()
     var hasTranslated = false
     let speechSynth = AVSpeechSynthesizer()
-    let borderColor = UIColor.green.cgColor
+    let borderColor = UIColor.darkGray.cgColor
     let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {
