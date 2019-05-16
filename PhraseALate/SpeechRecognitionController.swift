@@ -46,6 +46,7 @@ class SpeechRecognitionController: UIViewController {
     
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     var translatedStr = String()
     var request = SFSpeechAudioBufferRecognitionRequest()
@@ -62,6 +63,9 @@ class SpeechRecognitionController: UIViewController {
         translateButton.layer.cornerRadius = 5
         translateButton.layer.borderWidth = borderWidth
         translateButton.layer.borderColor = borderColor
+        menuButton.layer.cornerRadius = 5
+        menuButton.layer.borderWidth = borderWidth
+        menuButton.layer.borderColor = borderColor
         recordButton.layer.cornerRadius = recordButton.bounds.size.height
         recordButton.layer.borderWidth = borderWidth
         recordButton.layer.borderColor = borderColor
@@ -103,6 +107,9 @@ class SpeechRecognitionController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let senderButton = sender as! UIButton
+        if senderButton.tag != 1{
         let resultsController = segue.destination as! TranslateResultsController
         let phrase = transcriptionLabel.text!
         if phrase != ""
@@ -114,7 +121,9 @@ class SpeechRecognitionController: UIViewController {
         {
             resultsController.chosenPhrase = "Error Dictating Speech"
         }
-        resultsController.chosenLanguageInt = 10
+            resultsController.chosenLanguageInt = 10
+            
+        }
     }
     
     /*

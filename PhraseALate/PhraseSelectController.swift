@@ -17,12 +17,22 @@ class PhraseSelectController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
     
+    @IBOutlet weak var foodButton: UIButton!
+    @IBOutlet weak var shopButton: UIButton!
+    @IBOutlet weak var medicalButton: UIButton!
+    @IBOutlet weak var lostButton: UIButton!
     var chosenLanguage = Int()
     let borderColor = UIColor.darkGray.cgColor
     let borderWidth: CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButtons()
+        
+    }
+    
+    func setupButtons(){
+        
         menuButton.layer.cornerRadius = 5
         menuButton.layer.borderWidth = borderWidth
         menuButton.layer.borderColor = borderColor
@@ -39,6 +49,18 @@ class PhraseSelectController: UIViewController {
         fourthButton.layer.borderWidth = borderWidth
         fourthButton.layer.borderColor = borderColor
         
+        shopButton.layer.cornerRadius = 5
+        shopButton.layer.borderWidth = borderWidth
+        shopButton.layer.borderColor = borderColor
+        medicalButton.layer.cornerRadius = 5
+        medicalButton.layer.borderWidth = borderWidth
+        medicalButton.layer.borderColor = borderColor
+        lostButton.layer.cornerRadius = 5
+        lostButton.layer.borderWidth = borderWidth
+        lostButton.layer.borderColor = borderColor
+        foodButton.layer.cornerRadius = 5
+        foodButton.layer.borderWidth = borderWidth
+        foodButton.layer.borderColor = borderColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

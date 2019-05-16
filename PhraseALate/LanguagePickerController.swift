@@ -13,6 +13,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var languagePicker: UIPickerView!
     
     @IBOutlet weak var chooseLangButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     var isTranslate = false
     var isPhrase = false
@@ -45,12 +46,18 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         chooseLangButton.layer.cornerRadius = 5
         chooseLangButton.layer.borderWidth = borderWidth
         chooseLangButton.layer.borderColor = borderColor
+        menuButton.layer.cornerRadius = 5
+        menuButton.layer.borderWidth = borderWidth
+        menuButton.layer.borderColor = borderColor
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //setup code for
         //seguelabelTest.text = languagePicker.selectedRowInComponent(0)
+        if !(sender is UIButton)
+        {
+        
         if (isTranslate) //if translating phrase we need to set the target viewcontroller's language field
         {
             let translateController = segue.destination as! EnterTranslationController
@@ -65,6 +72,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         {
             let speechController = segue.destination as! SpeechRecognitionController
             speechController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)
+        }
         }
         //set destination viewcontroller to recieve pickerView's language value for API request
     }

@@ -23,10 +23,10 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuButton.layer.cornerRadius = 5
         translateButton.layer.cornerRadius = 5
         translateButton.layer.borderWidth = borderWidth
         translateButton.layer.borderColor = borderColor
+        menuButton.layer.cornerRadius = 5
         menuButton.layer.borderWidth = borderWidth
         menuButton.layer.borderColor = borderColor
         textEnter.delegate = self
