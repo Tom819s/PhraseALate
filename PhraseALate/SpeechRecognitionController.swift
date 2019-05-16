@@ -28,17 +28,18 @@ class SpeechRecognitionController: UIViewController {
                 print("There was a problem starting recording: \(error.localizedDescription)")
             }
             isRecording = true
-            recordButton.backgroundColor = UIColor.gray
+            recordButton.backgroundColor = UIColor.init(red: 0.557, green: 0.557, blue: 0.576, alpha: 1.0)
+            // 0.557 0.557  0.576
             recordButton.setTitle("Stop", for: .normal)
         }
         else{
             stopRecording()
             isRecording = false
-            recordButton.backgroundColor = UIColor.red
+            recordButton.backgroundColor = UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0)
             recordButton.setTitle("Record", for: .normal)
         }
         
-    }
+    }//0,118,255)
     
     
     @IBOutlet weak var translateButton: UIButton!
@@ -55,7 +56,7 @@ class SpeechRecognitionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         translateButton.layer.cornerRadius = 5
-        recordButton.layer.cornerRadius = recordButton.bounds.size.height/2
+        recordButton.layer.cornerRadius = recordButton.bounds.size.height/2 + 2
     }
     
     

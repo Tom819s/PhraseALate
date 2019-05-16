@@ -30,6 +30,13 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textEnter.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if (textEnter.textColor == UIColor.lightGray)
@@ -45,6 +52,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
             textEnter.text = "Please Enter What You Want To Translate"
             textEnter.textColor = UIColor.white
         }
+        
     }
     
     @IBAction func translatePressed(_ sender: Any) {

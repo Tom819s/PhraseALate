@@ -23,7 +23,6 @@ class TitlePageController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //4B76EA
         phrasesButton.layer.cornerRadius = 5
         translateButton.layer.cornerRadius = 5
         voiceButton.layer.cornerRadius = 5
