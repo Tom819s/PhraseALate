@@ -88,7 +88,7 @@ class PhraseSelectController: UIViewController {
     
     @IBAction func tab2Presed(_ sender: Any) {
         firstButton.setTitle("Do you take traveler's checks?", for: .normal)
-        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 21)
         secondButton.setTitle("I have US Dollars", for: .normal)
         secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
         thirdButton.setTitle("I cannot afford that", for: .normal)
