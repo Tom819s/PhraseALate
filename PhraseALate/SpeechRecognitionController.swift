@@ -109,23 +109,26 @@ class SpeechRecognitionController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let senderButton = sender as! UIButton
-        if senderButton.tag != 1{
-        let resultsController = segue.destination as! TranslateResultsController
-        let phrase = transcriptionLabel.text!
-        if phrase != ""
+        if senderButton.tag != 1
         {
-            resultsController.chosenPhrase = phrase
-            resultsController.chosenLanguageInt = self.chosenLanguage
-        }
-        else
-        {
-            resultsController.chosenPhrase = "Error Dictating Speech"
-        }
-            resultsController.chosenLanguageInt = 10
-            
+            let resultsController = segue.destination as! TranslateResultsController
+            let phrase = transcriptionLabel.text!
+            if !(phrase.isEmpty)
+            {
+                resultsController.chosenPhrase = phrase
+                resultsController.chosenLanguageInt = self.chosenLanguage
+            }
+            else
+            {
+                resultsController.chosenPhrase = "Error Dictating Speech"
+                resultsController.chosenLanguageInt = 10
+                
+            }
         }
     }
     
+    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

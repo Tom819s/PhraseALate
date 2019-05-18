@@ -116,6 +116,8 @@ class PhraseSelectController: UIViewController {
         fourthButton.setTitle("Do you know someone who speaks English?", for: .normal)
         fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
     }
+    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

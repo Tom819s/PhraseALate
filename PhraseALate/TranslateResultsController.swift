@@ -140,6 +140,8 @@ class TranslateResultsController: UIViewController {
         speechSynth.speak(utterance)
     }
     
+    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

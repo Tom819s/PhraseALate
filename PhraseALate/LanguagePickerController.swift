@@ -91,6 +91,8 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
+    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

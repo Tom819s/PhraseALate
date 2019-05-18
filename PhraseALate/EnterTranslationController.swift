@@ -68,18 +68,25 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     }
     
     
+    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !(sender is UIButton)
         {
-            let resultsController = segue.destination as! TranslateResultsController
-            let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
-            resultsController.chosenPhrase = parsedString
-            print(resultsController.chosenPhrase)
-            resultsController.chosenLanguageInt = self.chosenLanguage
+                let resultsController = segue.destination as! TranslateResultsController
+                let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
+                resultsController.chosenPhrase = parsedString
+                print(resultsController.chosenPhrase)
+                resultsController.chosenLanguageInt = self.chosenLanguage
         }
         
     }
+    
+    
+    
     
     /*
      // MARK: - Navigation

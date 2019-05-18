@@ -123,7 +123,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERj-51-Imz"/>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H63-VL-ZVn"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="fiz-ue-gnI"/>
+                                    <action selector="menuPressed:" destination="fc2-3f-Ets" eventType="touchUpInside" id="sTr-9c-zNF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -196,7 +196,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcC-a0-6lb"/>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xv1-Wf-CKB"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Arj-kn-hEb"/>
+                                    <action selector="menuPressed:" destination="xUQ-Wq-v2d" eventType="touchUpInside" id="xz8-m5-uSE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K7l-d4-eBj">
-                                <rect key="frame" x="67" y="181" width="240" height="232"/>
+                                <rect key="frame" x="67" y="241" width="240" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -245,7 +245,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkW-6a-hNW"/>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bb4-7c-md3"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="9gj-Zm-CSn"/>
+                                    <action selector="menuPressed:" destination="jRq-cw-dO3" eventType="touchUpInside" id="zOX-2I-7HQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR8-mq-6Zs">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhO-c5-YG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117.5999999999999" y="-634.632683658171"/>
+            <point key="canvasLocation" x="2117.5999999999999" y="-634.72906403940885"/>
         </scene>
         <!--Phrase Select Controller-->
         <scene sceneID="2xq-ep-bY1">
@@ -331,7 +331,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yy4-0i-aIh"/>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDw-BR-QZO"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="qkd-Q8-fHy"/>
+                                    <action selector="menuPressed:" destination="gNY-l1-fSN" eventType="touchUpInside" id="BRd-mF-t3D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="92F-O7-Ena">
@@ -439,7 +439,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZTi-gF-ixf"/>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvY-cF-LAr"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="eMS-Og-FsI"/>
+                                    <action selector="menuPressed:" destination="JCx-sc-Ehl" eventType="touchUpInside" id="hi9-cH-jkJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPl-tO-HJO">
@@ -504,7 +504,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q8i-fs-KFk"/>
-        <segue reference="qkd-Q8-fHy"/>
+        <segue reference="o3e-2R-qIC"/>
     </inferredMetricsTieBreakers>
 </document>
