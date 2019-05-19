@@ -83,6 +83,7 @@ class TranslateResultsController: UIViewController {
     
     @IBAction func speakAgainPressed(_ sender: Any)
     {
+        playSound()
         if hasTranslated
         {
             self.speakOutLoud()
@@ -140,7 +141,9 @@ class TranslateResultsController: UIViewController {
         speechSynth.speak(utterance)
     }
     
-    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func menuPressed(_ sender: Any) {
+        playSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
      // MARK: - Navigation

@@ -79,6 +79,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     @IBAction func chooseLangPressed(_ sender: Any) {
+        playSound()
         if (isTranslate){
             self.performSegue(withIdentifier: "translate", sender: nil)
         }

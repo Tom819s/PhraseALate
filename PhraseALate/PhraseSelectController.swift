@@ -67,6 +67,7 @@ class PhraseSelectController: UIViewController {
         let senderButton = sender as! UIButton
         if senderButton.tag != 1
         {
+            playSound()
             let thirdController = segue.destination as! TranslateResultsController
             thirdController.chosenPhrase = senderButton.currentTitle!
             thirdController.chosenLanguageInt = chosenLanguage
@@ -76,6 +77,7 @@ class PhraseSelectController: UIViewController {
     
     
     @IBAction func tab1Pressed(_ sender: Any) {
+        playSound()
         firstButton.setTitle("Where is the bathroom?", for: .normal)
         firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
         secondButton.setTitle("I need something to drink", for: .normal)
@@ -87,6 +89,7 @@ class PhraseSelectController: UIViewController {
     }
     
     @IBAction func tab2Presed(_ sender: Any) {
+        playSound()
         firstButton.setTitle("Do you take traveler's checks?", for: .normal)
         firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 21)
         secondButton.setTitle("I have US Dollars", for: .normal)
@@ -97,6 +100,7 @@ class PhraseSelectController: UIViewController {
         fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
     }
     @IBAction func tab3Pressed(_ sender: Any) {
+        playSound()
         firstButton.setTitle("I need medical attention", for: .normal)
         firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
         secondButton.setTitle("I feel sick", for: .normal)
@@ -107,6 +111,7 @@ class PhraseSelectController: UIViewController {
         fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 26)
     }
     @IBAction func tab4Pressed(_ sender: Any) {
+        playSound()
         firstButton.setTitle("I am lost", for: .normal)
         firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         secondButton.setTitle("Where is the US consulate?", for: .normal)
@@ -116,7 +121,9 @@ class PhraseSelectController: UIViewController {
         fourthButton.setTitle("Do you know someone who speaks English?", for: .normal)
         fourthButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
     }
-    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func menuPressed(_ sender: Any) {
+        playSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
      // MARK: - Navigation

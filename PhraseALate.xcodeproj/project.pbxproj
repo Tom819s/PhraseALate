@@ -17,6 +17,7 @@
 		3F19714522502DD30033E9E9 /* PhraseSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714422502DD30033E9E9 /* PhraseSelectController.swift */; };
 		3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19714622502E670033E9E9 /* TranslateResultsController.swift */; };
 		3F620DAB22846A6000F25E3B /* SpeechRecognitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */; };
+		3FB72B552291CFA700E59BC8 /* buttonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FB72B542291CFA700E59BC8 /* buttonSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3F19714422502DD30033E9E9 /* PhraseSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseSelectController.swift; sourceTree = "<group>"; };
 		3F19714622502E670033E9E9 /* TranslateResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResultsController.swift; sourceTree = "<group>"; };
 		3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionController.swift; sourceTree = "<group>"; };
+		3FB72B542291CFA700E59BC8 /* buttonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buttonSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */,
 				3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
+				3FB72B542291CFA700E59BC8 /* buttonSound.wav */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
 				3F19713A224FA7B30033E9E9 /* Info.plist */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				3F197139224FA7B30033E9E9 /* LaunchScreen.storyboard in Resources */,
 				3F197136224FA7B30033E9E9 /* Assets.xcassets in Resources */,
+				3FB72B552291CFA700E59BC8 /* buttonSound.wav in Resources */,
 				3F197134224FA7B20033E9E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

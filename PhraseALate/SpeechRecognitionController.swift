@@ -14,6 +14,7 @@ class SpeechRecognitionController: UIViewController {
     @IBOutlet weak var transcriptionLabel: UILabel!
     
     @IBAction func translateButtonPressed(_ sender: Any) {
+        playSound()
     }
     
     @IBAction func recordButton(_ sender: Any) {
@@ -127,7 +128,9 @@ class SpeechRecognitionController: UIViewController {
         }
     }
     
-    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func menuPressed(_ sender: Any) {
+        playSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
      // MARK: - Navigation

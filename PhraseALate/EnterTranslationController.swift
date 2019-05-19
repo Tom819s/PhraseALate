@@ -62,13 +62,16 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func translatePressed(_ sender: Any) {
+        playSound()
         
         self.stringToTrans = textEnter.text.replacingOccurrences(of: "\n", with: "%20")
         self.performSegue(withIdentifier: "toResults", sender: nil)
     }
     
     
-    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func menuPressed(_ sender: Any) {
+        playSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     

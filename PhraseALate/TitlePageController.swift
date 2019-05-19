@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
+
+var audioPlayer: AVAudioPlayer?
+
 
 class TitlePageController: UIViewController
 {
@@ -54,6 +58,7 @@ class TitlePageController: UIViewController
         transChose = false
         voiceChose = false
         phraseChose = true
+        playSound()
         self.performSegue(withIdentifier: "langPick", sender: nil)
     }
     
@@ -62,6 +67,7 @@ class TitlePageController: UIViewController
         phraseChose = false
         voiceChose = false
         transChose = true
+        playSound()
         self.performSegue(withIdentifier: "langPick", sender: nil)
     }
     
@@ -69,8 +75,26 @@ class TitlePageController: UIViewController
         phraseChose = false
         voiceChose = true
         transChose = false
+        playSound()
         self.performSegue(withIdentifier: "langPick", sender: nil)
     }
     
+
+}
+
+func playSound() {
+    if let audioPlayer = audioPlayer, audioPlayer.isPlaying { audioPlayer.stop() }
+    
+    guard let soundFile = Bundle.main.url(forResource: "buttonSound", withExtension: "wav")
+        else { return }
+    
+    do {
+        try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+        try AVAudioSession.sharedInstance().setActive(true)
+        audioPlayer = try AVAudioPlayer(contentsOf: soundFile)
+        audioPlayer?.play()
+    } catch let error {
+        print(error.localizedDescription)
+    }
 }
 
