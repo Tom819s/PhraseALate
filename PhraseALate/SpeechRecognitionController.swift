@@ -76,9 +76,13 @@ class SpeechRecognitionController: UIViewController {
     func startRecording() throws{
         
         request = SFSpeechAudioBufferRecognitionRequest()
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        
         let node = audioEngine.inputNode
         node.removeTap(onBus: 0)
-        let recordingFormat = node.outputFormat(forBus: 0)
+        let recordingFormat = node.inputFormat(forBus: 0)
         
         // 2
         node.installTap(onBus: 0, bufferSize: 1024,

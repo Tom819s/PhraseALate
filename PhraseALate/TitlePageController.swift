@@ -83,6 +83,7 @@ class TitlePageController: UIViewController
 }
 
 func playSound() {
+    
     if let audioPlayer = audioPlayer, audioPlayer.isPlaying { audioPlayer.stop() }
     
     guard let soundFile = Bundle.main.url(forResource: "buttonSound", withExtension: "wav")
@@ -93,6 +94,7 @@ func playSound() {
         try AVAudioSession.sharedInstance().setActive(true)
         audioPlayer = try AVAudioPlayer(contentsOf: soundFile)
         audioPlayer?.play()
+ 
     } catch let error {
         print(error.localizedDescription)
     }
