@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location needed to geolocate and determine the common language of where you&apos;re located</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech Recognition</string>
 	<key>NSMicrophoneUsageDescription</key>

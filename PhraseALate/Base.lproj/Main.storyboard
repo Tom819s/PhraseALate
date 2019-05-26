@@ -154,17 +154,44 @@
                                     <action selector="menuPressed:" destination="fc2-3f-Ets" eventType="touchUpInside" id="sTr-9c-zNF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-ue-Pmk">
+                                <rect key="frame" x="100" y="190" width="214" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="VXW-jN-dK3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="GeoLocate"/>
+                                <connections>
+                                    <action selector="geolocatePressed:" destination="fc2-3f-Ets" eventType="touchUpInside" id="ceU-D4-9KI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-4n-N5Y">
+                                <rect key="frame" x="130" y="292" width="154" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="clC-Th-i7z"/>
+                                    <constraint firstAttribute="width" constant="42" id="cub-iJ-4GB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88481550789999996" green="0.93437033920000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="SI1-ue-Pmk" firstAttribute="top" secondItem="ADV-0b-j0v" secondAttribute="bottom" constant="60" id="16a-V7-wxf"/>
                             <constraint firstItem="0fI-Kr-k00" firstAttribute="top" secondItem="XuN-ly-kIc" secondAttribute="bottom" constant="140" id="2wG-57-rke"/>
                             <constraint firstItem="jJP-Xc-XPF" firstAttribute="trailing" secondItem="ADV-0b-j0v" secondAttribute="trailing" constant="140" id="BfN-dS-QRv"/>
                             <constraint firstItem="ADV-0b-j0v" firstAttribute="top" secondItem="jJP-Xc-XPF" secondAttribute="top" constant="12" id="Ikp-CU-kM3"/>
+                            <constraint firstItem="bSn-4n-N5Y" firstAttribute="leading" secondItem="jJP-Xc-XPF" secondAttribute="leading" constant="130" id="XAg-eh-CGz"/>
                             <constraint firstItem="XuN-ly-kIc" firstAttribute="leading" secondItem="6N9-bL-vAk" secondAttribute="leadingMargin" constant="30" id="aVy-9q-Y7t"/>
+                            <constraint firstItem="SI1-ue-Pmk" firstAttribute="leading" secondItem="jJP-Xc-XPF" secondAttribute="leading" constant="100" id="b7v-rV-1u9"/>
                             <constraint firstItem="ADV-0b-j0v" firstAttribute="leading" secondItem="jJP-Xc-XPF" secondAttribute="leading" constant="140" id="bK3-4T-Wve"/>
+                            <constraint firstItem="jJP-Xc-XPF" firstAttribute="trailing" secondItem="bSn-4n-N5Y" secondAttribute="trailing" constant="130" id="e7D-TD-LcH"/>
+                            <constraint firstItem="jJP-Xc-XPF" firstAttribute="trailing" secondItem="SI1-ue-Pmk" secondAttribute="trailing" constant="100" id="jR9-M7-1KX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XuN-ly-kIc" secondAttribute="trailing" constant="30" id="joU-wf-lFR"/>
                             <constraint firstItem="0fI-Kr-k00" firstAttribute="leading" secondItem="jJP-Xc-XPF" secondAttribute="leading" constant="65" id="kiv-ey-KOw"/>
                             <constraint firstItem="jJP-Xc-XPF" firstAttribute="trailing" secondItem="0fI-Kr-k00" secondAttribute="trailing" constant="66" id="mEU-fz-Cwz"/>
+                            <constraint firstItem="bSn-4n-N5Y" firstAttribute="top" secondItem="SI1-ue-Pmk" secondAttribute="bottom" constant="8" id="omE-q2-Kf1"/>
                             <constraint firstItem="jJP-Xc-XPF" firstAttribute="bottom" secondItem="0fI-Kr-k00" secondAttribute="bottom" constant="20" id="zks-ld-QZZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jJP-Xc-XPF"/>
@@ -172,6 +199,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chooseLangButton" destination="0fI-Kr-k00" id="VMb-FD-TvO"/>
+                        <outlet property="countryCodeLabel" destination="bSn-4n-N5Y" id="3Od-tA-Y5c"/>
                         <outlet property="languagePicker" destination="XuN-ly-kIc" id="t0o-0s-X7h"/>
                         <outlet property="menuButton" destination="ADV-0b-j0v" id="iPn-Js-EnI"/>
                         <segue destination="gNY-l1-fSN" kind="show" identifier="phrase" id="Ee8-mM-kZQ"/>
@@ -181,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNf-9v-1Km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1346.376811594203" y="132.58928571428572"/>
         </scene>
         <!--Speech Recognition Controller-->
         <scene sceneID="V8f-Eg-Oqu">
@@ -536,9 +564,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TestText" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL3-89-kVG">
-                                <rect key="frame" x="50" y="537" width="314" height="145"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TestText" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL3-89-kVG">
+                                <rect key="frame" x="50" y="622" width="314" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tyo-I3-7Re"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

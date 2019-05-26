@@ -72,7 +72,7 @@ class TranslateResultsController: UIViewController {
                             self.speakOutLoud()
                     }
                 }
-                catch let jsonErr
+                catch _
                 {
                     print("JSON decoding exception")
                     self.translatedView.text = "Error: Try Again"
