@@ -77,6 +77,10 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         //set destination viewcontroller to recieve pickerView's language value for API request
     }
     
+    func geolocate(){
+        //stub::
+        //get users locale and language of area they are in
+    }
     
     @IBAction func chooseLangPressed(_ sender: Any) {
         playSound()
