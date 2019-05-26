@@ -25,18 +25,10 @@ class TranslateResultsController: UIViewController {
     var chosenLanguageStr = String()
     var hasTranslated = false
     let speechSynth = AVSpeechSynthesizer()
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         phraseView.text = chosenPhrase
-        menuButton.layer.cornerRadius = 5
-        menuButton.layer.borderWidth = borderWidth
-        menuButton.layer.borderColor = borderColor
-        replayButton.layer.cornerRadius = 5
-        replayButton.layer.borderWidth = borderWidth
-        replayButton.layer.borderColor = borderColor
         languageIntToAPIStr()
         translate()
         // Do any additional setup after loading the view.
@@ -57,7 +49,7 @@ class TranslateResultsController: UIViewController {
         
         //https://translate.yandex.net/api/v1.5/tr.json/getLangs
         
-        let task = URLSession.shared.dataTask(with: url)
+        var task = URLSession.shared.dataTask(with: url)
         { (data, response, error) in
             if let data = data
             {

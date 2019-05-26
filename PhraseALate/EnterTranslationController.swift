@@ -17,18 +17,10 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     var stringToTrans = String()
     var chosenLanguage = Int()
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth : CGFloat = 2.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        translateButton.layer.cornerRadius = 5
-        translateButton.layer.borderWidth = borderWidth
-        translateButton.layer.borderColor = borderColor
-        menuButton.layer.cornerRadius = 5
-        menuButton.layer.borderWidth = borderWidth
-        menuButton.layer.borderColor = borderColor
         textEnter.delegate = self
         textEnter.text = "Please Enter What You Want To Translate"
         textEnter.textColor = UIColor.lightGray
@@ -79,11 +71,10 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !(sender is UIButton)
         {
-                let resultsController = segue.destination as! TranslateResultsController
-                let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
-                resultsController.chosenPhrase = parsedString
-                print(resultsController.chosenPhrase)
-                resultsController.chosenLanguageInt = self.chosenLanguage
+            let resultsController = segue.destination as! TranslateResultsController
+            let parsedString = stringToTrans.replacingOccurrences(of: "[!@#$%^&*()<>;:{}]", with: " ", options: [.regularExpression, .caseInsensitive])
+            resultsController.chosenPhrase = parsedString
+            resultsController.chosenLanguageInt = self.chosenLanguage
         }
         
     }

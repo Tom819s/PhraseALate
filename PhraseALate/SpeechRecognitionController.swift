@@ -56,20 +56,10 @@ class SpeechRecognitionController: UIViewController {
     var recognitionTask: SFSpeechRecognitionTask?
     var chosenLanguage = 100
     var isRecording = false
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth : CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        translateButton.layer.cornerRadius = 5
-        translateButton.layer.borderWidth = borderWidth
-        translateButton.layer.borderColor = borderColor
-        menuButton.layer.cornerRadius = 5
-        menuButton.layer.borderWidth = borderWidth
-        menuButton.layer.borderColor = borderColor
         recordButton.layer.cornerRadius = recordButton.bounds.size.height
-        recordButton.layer.borderWidth = borderWidth
-        recordButton.layer.borderColor = borderColor
     }
     
     

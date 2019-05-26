@@ -20,11 +20,10 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     var isTranslate = false
     var isPhrase = false
     var isVoice = false
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth : CGFloat = 2.0
     var locationManager = CLLocationManager()
     var geoCoder = CLGeocoder()
     var countryCode = "TEST"
+    var countryLang = "NULL"
     var tempLangCode = 99
     
     var languageData: [String] = [String]()
@@ -54,12 +53,6 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         languageData = ["Arabic", "Dutch", "Finnish", "French", "German", "Hindi", "Korean", "Portugese", "Russian", "Spanish", "Turkish"]
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
-        chooseLangButton.layer.cornerRadius = 5
-        chooseLangButton.layer.borderWidth = borderWidth
-        chooseLangButton.layer.borderColor = borderColor
-        menuButton.layer.cornerRadius = 5
-        menuButton.layer.borderWidth = borderWidth
-        menuButton.layer.borderColor = borderColor
         
         //locationManager code
         
@@ -72,46 +65,19 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //setup code for
-        //seguelabelTest.text = languagePicker.selectedRowInComponent(0)
         if !(sender is UIButton)
         {
-            if (countryCode != "TEST") //if country code was captured
-            {
-                switch(countryCode)
-                {
-                case "BF","BI","BJ","BL","CD","CG","CI","FR","GA","GF","GN","GP","MC","MF","ML","MQ","NC","NE","PF","PM","RE","SN","TF","TG","WF","YT","TD","DJ","CM","SC","HT","CF","MA":
-                    tempLangCode = 3
-                case "AR","CL","CO","CR","CU","DO","EC","GT","HN","MX","NI","PA","PE","SV","UY","VE","PR","GQ","PY","BO":
-                    self.tempLangCode = 9; //spanish
-                case "ET","AE","BH","DZ","EG","JO","KW","LY","OM","QA","SA","SY","YE","SD","EH","LB","MR","TN","KM","PS","IQ"://arabic
-                    tempLangCode = 0
-                case "AO","BR","CV","GW","MZ","PT","ST","TL":
-                    tempLangCode = 7
-                case "BQ","NL","SR","CW","SX","BE", "AW":
-                    tempLangCode = 1
-                case "AT","DE","LI":
-                    tempLangCode = 4
-                case "KP", "KR":
-                    tempLangCode = 6
-                case "RU":
-                    tempLangCode = 8
-                case "TR":
-                    tempLangCode = 10
-                default:
-                    tempLangCode = 99
-                }
-                
                 if (isTranslate) //if translating phrase we need to set the target viewcontroller's language field
                 {
                     let translateController = segue.destination as! EnterTranslationController
                     if (self.tempLangCode == 99){
                         translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
                     else{
-                    translateController.chosenLanguage = self.tempLangCode
+                        translateController.chosenLanguage = self.tempLangCode
                     }
                     
-                }                else if (isPhrase)
+                }
+                else if (isPhrase)
                 {
                     let translateController = segue.destination as! PhraseSelectController
                     if (self.tempLangCode == 99){
@@ -131,8 +97,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
                 }
                 
             }
-            //set destination viewcontroller to recieve pickerView's language value for API request
-        }
+        //set desti
         
     }
     
@@ -151,7 +116,9 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
-    @IBAction func menuPressed(_ sender: Any) { self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func menuPressed(_ sender: Any) {
+        playSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -162,12 +129,57 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
             {
                 print(validPlaceMark.location?.coordinate as Any)
                 self.countryCode = validPlaceMark.isoCountryCode!
-                self.countryCodeLabel.text = self.countryCode
+                self.parseCountry()
+                self.countryCodeLabel.isHidden = false
             }
             
             
         } )
     }
+    func parseCountry(){
+        if (countryCode != "TEST") //if country code was captured
+        {
+            switch(countryCode)
+            {
+            case "BF","BI","BJ","BL","CD","CG","CI","FR","GA","GF","GN","GP","MC","MF","ML","MQ","NC","NE","PF","PM","RE","SN","TF","TG","WF","YT","TD","DJ","CM","SC","HT","CF","MA":
+                tempLangCode = 3 //french
+                countryLang = "FR"
+            case "AR","CL","CO","CR","CU","DO","EC","GT","HN","MX","NI","PA","PE","SV","UY","VE","PR","GQ","PY","BO":
+                self.tempLangCode = 9 //spanish
+                countryLang = "ES"
+            case "ET","AE","BH","DZ","EG","JO","KW","LY","OM","QA","SA","SY","YE","SD","EH","LB","MR","TN","KM","PS","IQ":
+                tempLangCode = 0 //arabic
+                countryLang = "AR"
+            case "AO","BR","CV","GW","MZ","PT","ST","TL":
+                tempLangCode = 7 //portugese
+                countryLang = "PT"
+            case "BQ","NL","SR","CW","SX","BE", "AW":
+                tempLangCode = 1 //dutch
+                countryLang = "NL"
+            case "AT","DE","LI":
+                tempLangCode = 4 //german
+                countryLang = "DE"
+            case "KP", "KR":
+                tempLangCode = 6 //korean
+                countryLang = "KR"
+            case "RU":
+                tempLangCode = 8 //russian
+                countryLang = "RU"
+            case "TR":
+                tempLangCode = 10 //turkish
+                countryLang = "TR"
+            case "IN":
+                tempLangCode = 5 //hindi
+                countryLang = "HI"
+            default:
+                tempLangCode = 99 //default non-supported language
+                countryLang = "EN"
+            }
+            
+            countryCodeLabel.text = countryCode + ": " + countryLang
+    }
+}
+}
     /*
      // MARK: - Navigation
      
@@ -177,5 +189,4 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
      // Pass the selected object to the new view controller.
      }
      */
-    
-}
+

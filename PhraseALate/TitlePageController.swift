@@ -22,23 +22,9 @@ class TitlePageController: UIViewController
     var phraseChose = false
     var transChose = false
     var voiceChose = false
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth : CGFloat = 2.0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.layer.borderColor = borderColor
-        titleLabel.layer.borderWidth = borderWidth
-        phrasesButton.layer.cornerRadius = 5
-        phrasesButton.layer.borderWidth = borderWidth
-        phrasesButton.layer.borderColor = borderColor
-        translateButton.layer.cornerRadius = 5
-        translateButton.layer.borderWidth = borderWidth
-        translateButton.layer.borderColor = borderColor
-        voiceButton.layer.cornerRadius = 5
-        voiceButton.layer.borderWidth = borderWidth
-        voiceButton.layer.borderColor = borderColor
         
     }
     
@@ -79,7 +65,7 @@ class TitlePageController: UIViewController
         self.performSegue(withIdentifier: "langPick", sender: nil)
     }
     
-
+    
 }
 
 func playSound() {
@@ -94,7 +80,7 @@ func playSound() {
         try AVAudioSession.sharedInstance().setActive(true)
         audioPlayer = try AVAudioPlayer(contentsOf: soundFile)
         audioPlayer?.play()
- 
+        
     } catch let error {
         print(error.localizedDescription)
     }

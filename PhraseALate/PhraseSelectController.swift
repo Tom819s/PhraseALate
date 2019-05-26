@@ -22,46 +22,11 @@ class PhraseSelectController: UIViewController {
     @IBOutlet weak var medicalButton: UIButton!
     @IBOutlet weak var lostButton: UIButton!
     var chosenLanguage = Int()
-    let borderColor = UIColor.darkGray.cgColor
-    let borderWidth: CGFloat = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
-        
     }
     
-    func setupButtons(){
-        
-        menuButton.layer.cornerRadius = 5
-        menuButton.layer.borderWidth = borderWidth
-        menuButton.layer.borderColor = borderColor
-        firstButton.layer.cornerRadius = 5
-        firstButton.layer.borderWidth = borderWidth
-        firstButton.layer.borderColor = borderColor
-        secondButton.layer.cornerRadius = 5
-        secondButton.layer.borderWidth = borderWidth
-        secondButton.layer.borderColor = borderColor
-        thirdButton.layer.cornerRadius = 5
-        thirdButton.layer.borderWidth = borderWidth
-        thirdButton.layer.borderColor = borderColor
-        fourthButton.layer.cornerRadius = 5
-        fourthButton.layer.borderWidth = borderWidth
-        fourthButton.layer.borderColor = borderColor
-        
-        shopButton.layer.cornerRadius = 5
-        shopButton.layer.borderWidth = borderWidth
-        shopButton.layer.borderColor = borderColor
-        medicalButton.layer.cornerRadius = 5
-        medicalButton.layer.borderWidth = borderWidth
-        medicalButton.layer.borderColor = borderColor
-        lostButton.layer.cornerRadius = 5
-        lostButton.layer.borderWidth = borderWidth
-        lostButton.layer.borderColor = borderColor
-        foodButton.layer.cornerRadius = 5
-        foodButton.layer.borderWidth = borderWidth
-        foodButton.layer.borderColor = borderColor
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let senderButton = sender as! UIButton
@@ -125,14 +90,5 @@ class PhraseSelectController: UIViewController {
         playSound()
         self.navigationController?.popToRootViewController(animated: true)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
