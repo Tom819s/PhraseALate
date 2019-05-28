@@ -19,6 +19,7 @@
 		3F620DAB22846A6000F25E3B /* SpeechRecognitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */; };
 		3FB72B552291CFA700E59BC8 /* buttonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FB72B542291CFA700E59BC8 /* buttonSound.wav */; };
 		3FCAA38A229B45D400ACFC18 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAA389229B45D400ACFC18 /* customButton.swift */; };
+		3FCAA38C229D6ACF00ACFC18 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAA38B229D6ACF00ACFC18 /* CurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionController.swift; sourceTree = "<group>"; };
 		3FB72B542291CFA700E59BC8 /* buttonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buttonSound.wav; sourceTree = "<group>"; };
 		3FCAA389229B45D400ACFC18 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
+		3FCAA38B229D6ACF00ACFC18 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				3F0B58FB2250AEC20081AAFB /* EnterTranslationController.swift */,
 				3F0B58FD2250BD850081AAFB /* LanguagePickerController.swift */,
 				3F620DAA22846A6000F25E3B /* SpeechRecognitionController.swift */,
+				3FCAA38B229D6ACF00ACFC18 /* CurrencyViewController.swift */,
 				3F197135224FA7B30033E9E9 /* Assets.xcassets */,
 				3FB72B542291CFA700E59BC8 /* buttonSound.wav */,
 				3F197137224FA7B30033E9E9 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				3F0B58FE2250BD850081AAFB /* LanguagePickerController.swift in Sources */,
 				3F197131224FA7B20033E9E9 /* TitlePageController.swift in Sources */,
 				3F19714722502E670033E9E9 /* TranslateResultsController.swift in Sources */,
+				3FCAA38C229D6ACF00ACFC18 /* CurrencyViewController.swift in Sources */,
 				3FCAA38A229B45D400ACFC18 /* customButton.swift in Sources */,
 				3F19712F224FA7B20033E9E9 /* AppDelegate.swift in Sources */,
 				3F620DAB22846A6000F25E3B /* SpeechRecognitionController.swift in Sources */,

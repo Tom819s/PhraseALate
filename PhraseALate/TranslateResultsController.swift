@@ -49,7 +49,7 @@ class TranslateResultsController: UIViewController {
         
         //https://translate.yandex.net/api/v1.5/tr.json/getLangs
         
-        var task = URLSession.shared.dataTask(with: url)
+        URLSession.shared.dataTask(with: url)
         { (data, response, error) in
             if let data = data
             {
@@ -128,7 +128,7 @@ class TranslateResultsController: UIViewController {
         let translatedNoPunctuation = translatedString.components(separatedBy: CharacterSet.punctuationCharacters).joined()
         let utterance = AVSpeechUtterance(string: translatedNoPunctuation)
         utterance.volume = 1.0
-        utterance.rate = 0.4
+        utterance.rate = 0.01
         utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
         speechSynth.speak(utterance)
     }

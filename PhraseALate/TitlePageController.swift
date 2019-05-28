@@ -29,14 +29,14 @@ class TitlePageController: UIViewController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if !(sender is UIButton)
-        {
-            let pickController = segue.destination as! LanguagePickerController
-            pickController.isPhrase = phraseChose
-            pickController.isTranslate = transChose
-            pickController.isVoice = voiceChose
-        }
+//        
+//        if !(sender is UIButton)
+//        {
+//            let pickController = segue.destination as! LanguagePickerController
+//            pickController.isPhrase = phraseChose
+//            pickController.isTranslate = transChose
+//            pickController.isVoice = voiceChose
+//        }
     }
     
     
