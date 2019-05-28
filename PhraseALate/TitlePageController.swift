@@ -43,7 +43,8 @@ class TitlePageController: UIViewController
         playSound()
     }
     
-    @IBAction func phrasePressed(_ sender: Any) {        phraseChose = true
+    @IBAction func phrasePressed(_ sender: Any) {
+        phraseChose = true
         transChose = false
         voiceChose = false
         phraseChose = true
