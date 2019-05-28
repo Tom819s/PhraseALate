@@ -20,7 +20,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
     var dict: [String:String] = [:]
     var locationManager = CLLocationManager()
     var geoCoder = CLGeocoder()
-    var countryCode = "GB"
+    var countryCode = "DE"
     var conversionRate : Double = 0.00
     var apiURL = "https://api.exchangeratesapi.io/latest?base=USD&symbols=USD,"
     var convertWanted = false
@@ -44,7 +44,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
             UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CurrencyViewController.doneEnteringNumbers))
         ]
         numberToolbar.sizeToFit()
-        USDBox.inputAccessoryView = numberToolbar 
+        USDBox.inputAccessoryView = numberToolbar
         
         locationManager.delegate = self;
         if CLLocationManager.authorizationStatus() == .notDetermined{
@@ -60,19 +60,24 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         playSound()
         self.navigationController?.popToRootViewController(animated: true)
     }
-    @IBAction func geoLocatePressed(_ sender: Any) { locationManager.startUpdatingLocation()
+    @IBAction func geoLocatePressed(_ sender: Any) {
+        playSound()
+        locationManager.startUpdatingLocation()
+        getRates()
     }
     
     @IBAction func selectCurrencyPressed(_ sender: Any) {
+        playSound()
         currencyTableView.isHidden = false
     }
     
     @IBAction func updateRatesPressed(_ sender: Any) {
+        playSound()
         getRates()
-        self.targetCurrencyLabel.text = self.dict[self.countryCode]
     }
     
     @IBAction func convertPressed(_ sender: Any) {
+        playSound()
         convertAtRate()
     }
     
@@ -84,8 +89,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
             if let validPlaceMark = placemarks?[0]
             {
                 self.countryCode = validPlaceMark.isoCountryCode!
-                self.targetCurrencyLabel.text = self.dict["GB"]
-                print(self.dict[self.countryCode]!)
+                self.getRates()
             }
             
             
@@ -95,9 +99,10 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
     @objc func doneEnteringNumbers () {
         USDBox.resignFirstResponder()
     }
+    
     func getRates(){
         
-        let url = URL(string: apiURL + dict["GB"]!)!
+        let url = URL(string: apiURL + dict[countryCode]!)!
         
         print(url)
         
@@ -111,6 +116,8 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
                     DispatchQueue.main.async
                         {
                             self.conversionRate = text.rates[self.dict[self.countryCode]!]!
+                            self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]!
+                            
                             if self.convertWanted{
                                 self.convertAtRate()
                                 self.convertWanted = false
@@ -134,7 +141,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         
         let amount = Double(USDBox.text!)
         targetCurrencyBox.text = String(format: "%.2f", amount! * conversionRate)
-        targetCurrencyLabel.text = self.dict[self.countryCode]!
+        self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]!
         
     }
     
