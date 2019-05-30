@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N0u-y2-0yF">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TitlePageController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhraseALate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW7-Yn-2ml">
-                                <rect key="frame" x="0.0" y="108" width="414" height="189"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="160"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="189" id="SK5-IH-lQ7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="SK5-IH-lQ7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="59"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jZ-NT-3Ki" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="432" width="254" height="70"/>
+                                <rect key="frame" x="80" y="308" width="215" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="eqU-jV-fng"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-EI-hzf" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="532" width="254" height="70"/>
+                                <rect key="frame" x="80" y="408" width="215" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="faI-Ew-dw7"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MFY-hp-Ffd" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="632" width="254" height="70"/>
+                                <rect key="frame" x="80" y="508" width="215" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="53L-Vp-ynj"/>
@@ -73,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2sN-wS-5KE" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="732" width="254" height="70"/>
+                                <rect key="frame" x="80" y="608" width="215" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="IKa-Ex-SrR"/>
@@ -87,15 +87,21 @@
                                     <segue destination="cMb-Xb-y6Z" kind="show" identifier="currency" id="8Cy-sF-n9J"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTg-9K-B00">
+                                <rect key="frame" x="120" y="720" width="135" height="30"/>
+                                <state key="normal" title="settings"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.88481550789999996" green="0.93437033920000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PTg-9K-B00" secondAttribute="trailing" constant="120" id="2qr-fO-SYc"/>
                             <constraint firstItem="2sN-wS-5KE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="8Zh-b6-RY4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2jZ-NT-3Ki" secondAttribute="trailing" constant="80" id="924-kZ-T0f"/>
                             <constraint firstItem="K5m-EI-hzf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="9TQ-Xn-uSv"/>
+                            <constraint firstItem="PTg-9K-B00" firstAttribute="top" secondItem="2sN-wS-5KE" secondAttribute="bottom" constant="42" id="AW6-Rm-5TN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PTg-9K-B00" secondAttribute="bottom" constant="28" id="F9d-0c-FqR"/>
                             <constraint firstAttribute="trailing" secondItem="MFY-hp-Ffd" secondAttribute="trailing" constant="80" id="I8W-EN-uQQ"/>
                             <constraint firstAttribute="trailing" secondItem="HW7-Yn-2ml" secondAttribute="trailing" id="Kfe-XC-Pv8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2sN-wS-5KE" secondAttribute="bottom" constant="60" id="LgA-5i-NYO"/>
                             <constraint firstItem="MFY-hp-Ffd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="Mc9-Jn-deF"/>
                             <constraint firstItem="2sN-wS-5KE" firstAttribute="top" secondItem="MFY-hp-Ffd" secondAttribute="bottom" constant="30" id="SaH-9Q-tgp"/>
                             <constraint firstItem="HW7-Yn-2ml" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XLB-cI-LOf"/>
@@ -105,6 +111,7 @@
                             <constraint firstItem="MFY-hp-Ffd" firstAttribute="top" secondItem="K5m-EI-hzf" secondAttribute="bottom" constant="30" id="tRQ-fg-wQ1"/>
                             <constraint firstItem="2jZ-NT-3Ki" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="uM0-Ti-Kyc"/>
                             <constraint firstItem="HW7-Yn-2ml" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="vXa-at-nct"/>
+                            <constraint firstItem="PTg-9K-B00" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="120" id="vv2-Qb-x9V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -113,6 +120,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="phrasesButton" destination="2jZ-NT-3Ki" id="QYx-V1-uXz"/>
+                        <outlet property="settingsButton" destination="PTg-9K-B00" id="kGI-au-E0z"/>
                         <outlet property="titleLabel" destination="HW7-Yn-2ml" id="Efs-pw-fWb"/>
                         <outlet property="translateButton" destination="K5m-EI-hzf" id="e1t-m0-Kki"/>
                         <outlet property="voiceButton" destination="MFY-hp-Ffd" id="RKl-mu-jSk"/>
@@ -128,11 +136,11 @@
             <objects>
                 <viewController id="fc2-3f-Ets" customClass="LanguagePickerController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6N9-bL-vAk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fI-Kr-k00" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="65" y="782" width="283" height="60"/>
+                                <rect key="frame" x="65" y="698" width="244" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="dhP-VD-E2H"/>
@@ -147,7 +155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-0b-j0v" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="100" width="134" height="30"/>
+                                <rect key="frame" x="140" y="100" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AIh-AU-QzV"/>
@@ -163,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-ue-Pmk" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="715" width="254" height="37"/>
+                                <rect key="frame" x="80" y="631" width="215" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="HVg-Tp-qyU"/>
@@ -177,7 +185,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-4n-N5Y">
-                                <rect key="frame" x="100" y="674" width="214" height="21"/>
+                                <rect key="frame" x="100" y="590" width="175" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fza-mp-4gR"/>
                                 </constraints>
@@ -186,7 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuN-ly-kIc">
-                                <rect key="frame" x="27" y="328" width="360" height="216"/>
+                                <rect key="frame" x="27" y="244" width="321" height="216"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                         </subviews>
@@ -230,11 +238,11 @@
             <objects>
                 <viewController id="cMb-Xb-y6Z" customClass="CurrencyViewController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MU2-uI-RCW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kag-q3-KKf" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="108" width="134" height="30"/>
+                                <rect key="frame" x="140" y="108" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nLW-7x-c7n"/>
@@ -252,31 +260,31 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-pI-Cpm">
-                                <rect key="frame" x="60" y="213" width="294" height="52"/>
+                                <rect key="frame" x="60" y="213" width="255" height="52"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue" textContentType="postal-code"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="hzF-S6-hf6">
-                                <rect key="frame" x="60" y="331" width="294" height="53"/>
+                                <rect key="frame" x="60" y="331" width="255" height="53"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00 USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yj-xc-YYs">
-                                <rect key="frame" x="120" y="178" width="174" height="21"/>
+                                <rect key="frame" x="120" y="178" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmq-vA-rM6">
-                                <rect key="frame" x="120" y="296" width="174" height="21"/>
+                                <rect key="frame" x="120" y="296" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BY-lw-QGR" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="696" width="254" height="37"/>
+                                <rect key="frame" x="80" y="612" width="215" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="mIT-Cz-us8"/>
@@ -290,7 +298,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-gW-IN7" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="620" width="254" height="37"/>
+                                <rect key="frame" x="80" y="536" width="215" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="fMb-O5-MB7"/>
@@ -304,7 +312,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HA-B7-vGV" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="772" width="354" height="70"/>
+                                <rect key="frame" x="30" y="688" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="BYI-1i-hUE"/>
@@ -319,7 +327,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHP-HU-gbS" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="80" y="544" width="254" height="37"/>
+                                <rect key="frame" x="80" y="460" width="215" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="37" id="CaX-cI-u0Z"/>
@@ -539,18 +547,18 @@
             <objects>
                 <viewController id="xUQ-Wq-v2d" customClass="SpeechRecognitionController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yf3-yN-5Mk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-Yd-vaI">
-                                <rect key="frame" x="40" y="208" width="334" height="0.0"/>
+                                <rect key="frame" x="40" y="208" width="295" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-ZZ-jdo">
-                                <rect key="frame" x="120" y="479" width="174" height="133"/>
+                                <rect key="frame" x="120" y="395" width="135" height="133"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="133" id="9zU-gX-ki0"/>
@@ -564,7 +572,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwO-bz-E58" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="692" width="354" height="70"/>
+                                <rect key="frame" x="30" y="608" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="fcX-3c-n41"/>
@@ -579,7 +587,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqy-Va-fgh" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="108" width="134" height="30"/>
+                                <rect key="frame" x="140" y="108" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7oR-82-j37"/>
@@ -629,11 +637,11 @@
             <objects>
                 <viewController id="jRq-cw-dO3" customClass="EnterTranslationController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NBf-1x-qy4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K7l-d4-eBj">
-                                <rect key="frame" x="30" y="248" width="354" height="304"/>
+                                <rect key="frame" x="30" y="248" width="315" height="220"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" keyboardKey="YES"/>
@@ -643,7 +651,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJv-Kh-cZX" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="108" width="134" height="30"/>
+                                <rect key="frame" x="140" y="108" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vne-3C-lh3"/>
@@ -659,7 +667,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR8-mq-6Zs" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="692" width="354" height="70"/>
+                                <rect key="frame" x="30" y="608" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="95g-iB-rFH"/>
@@ -705,11 +713,11 @@
             <objects>
                 <viewController id="gNY-l1-fSN" customClass="PhraseSelectController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Psa-Sl-y8S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="j8J-3K-94V" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="330" width="354" height="70"/>
+                                <rect key="frame" x="30" y="246" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="11P-xe-9YZ"/>
@@ -723,7 +731,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Smw-t1-117" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="518" width="354" height="70"/>
+                                <rect key="frame" x="30" y="434" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="j0y-DS-UtF"/>
@@ -737,7 +745,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aBt-7d-W6L" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="612" width="354" height="70"/>
+                                <rect key="frame" x="30" y="528" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="AQb-IS-P22"/>
@@ -751,7 +759,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-39-eZe" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="108" width="134" height="30"/>
+                                <rect key="frame" x="140" y="108" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3Iw-YZ-tXY"/>
@@ -767,7 +775,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="92F-O7-Ena" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="424" width="354" height="70"/>
+                                <rect key="frame" x="30" y="340" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="i1u-6h-XRy"/>
@@ -781,7 +789,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70g-Og-Fh8" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="20" y="782" width="78.5" height="30"/>
+                                <rect key="frame" x="20" y="698" width="68.666666666666671" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Food"/>
                                 <connections>
@@ -789,7 +797,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBa-bM-7F5" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="118.5" y="782" width="78.5" height="30"/>
+                                <rect key="frame" x="108.66666666666669" y="698" width="69" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Shop"/>
                                 <connections>
@@ -797,7 +805,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-sH-InH" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="217" y="782" width="78.5" height="30"/>
+                                <rect key="frame" x="197.66666666666666" y="698" width="68.666666666666657" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Medical"/>
                                 <connections>
@@ -805,7 +813,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cK-Zq-dYb" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="315.5" y="782" width="78.5" height="30"/>
+                                <rect key="frame" x="286.33333333333331" y="698" width="68.666666666666686" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Lost"/>
                                 <connections>
@@ -813,7 +821,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Phrases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-pM-m5q">
-                                <rect key="frame" x="120" y="148" width="174" height="50"/>
+                                <rect key="frame" x="116" y="148" width="143" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kvL-kj-BSD"/>
@@ -884,11 +892,11 @@
             <objects>
                 <viewController id="JCx-sc-Ehl" customClass="TranslateResultsController" customModule="PhraseALate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EJW-PR-LRi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TestText" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL3-89-kVG">
-                                <rect key="frame" x="50" y="622" width="314" height="60"/>
+                                <rect key="frame" x="50" y="538" width="275" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tyo-I3-7Re"/>
@@ -898,7 +906,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoy-wA-0Ei" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="140" y="108" width="134" height="30"/>
+                                <rect key="frame" x="140" y="108" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Qy-Mg-MtD"/>
@@ -914,7 +922,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPl-tO-HJO" customClass="customButton" customModule="PhraseALate" customModuleProvider="target">
-                                <rect key="frame" x="30" y="772" width="354" height="70"/>
+                                <rect key="frame" x="30" y="688" width="315" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="cxh-TC-EhE"/>
@@ -929,7 +937,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading...." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-eb-4VU">
-                                <rect key="frame" x="30" y="178" width="354" height="240"/>
+                                <rect key="frame" x="30" y="178" width="315" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="9sd-YX-DU6"/>
@@ -939,13 +947,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.01" maxValue="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="hre-nM-tnv">
-                                <rect key="frame" x="88" y="698" width="238" height="31"/>
+                                <rect key="frame" x="88" y="614" width="199" height="31"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="JCx-sc-Ehl" eventType="valueChanged" id="mrP-Qt-AeD"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="playback speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okS-2H-z2V">
-                                <rect key="frame" x="120" y="736" width="174" height="21"/>
+                                <rect key="frame" x="120" y="652" width="135" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ys0-Ge-kGl"/>
                                 </constraints>
@@ -997,7 +1005,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="skx-gd-jRM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -18,6 +18,7 @@ class TitlePageController: UIViewController
     @IBOutlet weak var phrasesButton: UIButton!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var voiceButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var phraseChose = false
     var transChose = false
@@ -25,6 +26,9 @@ class TitlePageController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsButton.layer.borderColor = UIColor.darkGray.cgColor
+        settingsButton.layer.borderWidth = 1
+        settingsButton.layer.cornerRadius = 5
         
     }
     
