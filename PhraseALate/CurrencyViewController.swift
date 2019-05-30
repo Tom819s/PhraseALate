@@ -100,6 +100,18 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         USDBox.resignFirstResponder()
     }
     
+    func parseNumericalEntryOfExtraneousDecimals(){
+        var workingString = USDBox.text
+        let needle: Character = "."
+        if let index = workingString!.index(of: needle) {
+            workingString = workingString?.replacingOccurrences(of: ".", with: "")
+            workingString?.insert(".", at: index)
+            USDBox.text = workingString
+        }
+        
+    }
+        
+    
     func getRates(){
         
         let url = URL(string: apiURL + dict[countryCode]!)!
@@ -138,7 +150,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
             self.convertWanted = true
             getRates()
         }
-        
+        parseNumericalEntryOfExtraneousDecimals()
         let amount = Double(USDBox.text!)
         targetCurrencyBox.text = String(format: "%.2f", amount! * conversionRate)
         self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]!
