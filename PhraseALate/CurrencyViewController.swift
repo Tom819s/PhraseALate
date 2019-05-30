@@ -61,6 +61,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.popToRootViewController(animated: true)
     }
     @IBAction func geoLocatePressed(_ sender: Any) {
+        self.convertWanted = true
         playSound()
         locationManager.startUpdatingLocation()
         getRates()
@@ -130,7 +131,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
                             self.conversionRate = text.rates[self.dict[self.countryCode]!]!
                             self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]!
                             
-                            if self.convertWanted{
+                            if self.convertWanted == true {
                                 self.convertAtRate()
                                 self.convertWanted = false
                             }
