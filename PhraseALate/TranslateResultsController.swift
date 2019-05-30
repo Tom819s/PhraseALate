@@ -25,6 +25,7 @@ class TranslateResultsController: UIViewController {
     var chosenLanguageStr = String()
     var hasTranslated = false
     let speechSynth = AVSpeechSynthesizer()
+    var utteranceSpeed: Float = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,10 @@ class TranslateResultsController: UIViewController {
         languageIntToAPIStr()
         translate()
         // Do any additional setup after loading the view.
+    }
+    @IBAction func sliderChanged(_ sender: Any) {
+        let slider = sender as! UISlider
+        utteranceSpeed = slider.value
     }
     
     struct jsonResponse: Decodable{
@@ -128,7 +133,7 @@ class TranslateResultsController: UIViewController {
         let translatedNoPunctuation = translatedString.components(separatedBy: CharacterSet.punctuationCharacters).joined()
         let utterance = AVSpeechUtterance(string: translatedNoPunctuation)
         utterance.volume = 1.0
-        utterance.rate = 0.01
+        utterance.rate = utteranceSpeed
         utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
         speechSynth.speak(utterance)
     }
