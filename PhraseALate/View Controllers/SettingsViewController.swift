@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func classicPressed(_ sender: Any) {
         
-        
+        playSound()
         globalValues.newBorderColor     =       UIColor.darkGray.cgColor
         globalValues.newButtonColor     =       UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor
         globalValues.newBackgroundColor =       UIColor.init(red: 0.885, green: 0.934, blue: 1.000, alpha: 1.0).cgColor
@@ -68,6 +68,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func purplePressed(_ sender: Any) {
         
+        playSound()
         let lightPurple = UIColor.init(red: 0.557, green: 0.220, blue: 0.576, alpha: 1.0).cgColor
         
         globalValues.newBorderColor     =       UIColor.white.cgColor
@@ -88,6 +89,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func darkPressed(_ sender: Any) {
+        playSound()
         globalValues.newBorderColor     =       UIColor.lightGray.cgColor
         globalValues.newButtonColor     =       UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha:    1.0).cgColor
         globalValues.newBackgroundColor =       UIColor.init(red: 0.100, green: 0.100, blue: 0.100,     alpha: 1.0).cgColor
@@ -104,6 +106,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func papyrusPressed(_ sender: Any) {
+        playSound()
         globalValues.newBorderColor     =       UIColor.lightGray.cgColor
         globalValues.newButtonColor     =       UIColor.init(red: 0.394, green: 0.253, blue: 0.000,          alpha: 1.0).cgColor
         globalValues.newBackgroundColor =       UIColor.init(red: 0.672, green: 0.637, blue: 0.568,          alpha: 1.0).cgColor
