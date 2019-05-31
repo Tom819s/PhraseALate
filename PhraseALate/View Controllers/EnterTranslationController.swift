@@ -21,6 +21,8 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
+        setToTheme()
         textEnter.delegate = self
         textEnter.text = "Please Enter What You Want To Translate"
         textEnter.textColor = UIColor.lightGray
@@ -40,7 +42,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         if (textEnter.textColor == UIColor.lightGray)
         {
             textEnter.text = ""
-            textEnter.textColor = UIColor.init(red: 0.294, green: 0.463, blue: 0.918, alpha: 1.0)
+            textEnter.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
         }
     }
     
@@ -48,7 +50,7 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         if (textEnter.text == "")
         {
             textEnter.text = "Please Enter What You Want To Translate"
-            textEnter.textColor = UIColor.white
+            textEnter.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
         }
         
     }
@@ -80,7 +82,20 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
     }
     
     
-    
+    func setToTheme(){
+        
+        menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        translateButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        translateButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        translateButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        textEnter.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        textEnter.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        
+    }
     
     /*
      // MARK: - Navigation

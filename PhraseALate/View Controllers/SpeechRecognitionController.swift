@@ -37,7 +37,7 @@ class SpeechRecognitionController: UIViewController {
         else{
             stopRecording()
             isRecording = false
-            recordButton.backgroundColor = UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0)
+            recordButton.backgroundColor = UIColor(cgColor : SettingsViewController.globalValues.newButtonColor)
             //Red
             recordButton.setTitle("Record", for: .normal)
         }
@@ -59,6 +59,8 @@ class SpeechRecognitionController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setToTheme()
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
         recordButton.layer.cornerRadius = recordButton.bounds.size.height
     }
     
@@ -125,6 +127,20 @@ class SpeechRecognitionController: UIViewController {
     @IBAction func menuPressed(_ sender: Any) {
         playSound()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func setToTheme(){
+        
+        menuButton.layer.backgroundColor        = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor            = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        translateButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        translateButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        translateButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        recordButton.layer.backgroundColor      = SettingsViewController.globalValues.newButtonColor
+        recordButton.layer.borderColor          = SettingsViewController.globalValues.newBorderColor
+        recordButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
     }
     /*
      // MARK: - Navigation

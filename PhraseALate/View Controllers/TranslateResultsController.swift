@@ -13,22 +13,24 @@ class TranslateResultsController: UIViewController {
     
     @IBOutlet weak var translatedView: UILabel!
     @IBOutlet weak var phraseView: UILabel!
-    
     @IBOutlet weak var menuButton: UIButton!
-    
     @IBOutlet weak var replayButton: UIButton!
+    @IBOutlet weak var playbackLabel: UILabel!
+    @IBOutlet weak var sliderSpeed: UISlider!
     
-    var translatedString = String()
-    var chosenPhrase = String()
-    var voiceLanguage = String()
-    var chosenLanguageInt = Int()
-    var chosenLanguageStr = String()
-    var hasTranslated = false
-    let speechSynth = AVSpeechSynthesizer()
-    var utteranceSpeed: Float = 0.3
+    var translatedString            = String()
+    var chosenPhrase                = String()
+    var voiceLanguage               = String()
+    var chosenLanguageInt           = Int()
+    var chosenLanguageStr           = String()
+    var hasTranslated               = false
+    let speechSynth                 = AVSpeechSynthesizer()
+    var utteranceSpeed: Float       = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
+        setToTheme()
         phraseView.text = chosenPhrase
         languageIntToAPIStr()
         translate()
@@ -48,8 +50,8 @@ class TranslateResultsController: UIViewController {
     func translate ()
     {
         
-        let newString = chosenPhrase.replacingOccurrences(of: " ", with: "%20")
-        let urlString = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190330T143701Z.cb0abaf6f0e61f24.3678bc46520e369417f0949fcac8e2ecec2fb073&text=" + newString + "&lang=" + chosenLanguageStr
+        let formattedString = chosenPhrase.replacingOccurrences(of: " ", with: "%20")
+        let urlString = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190330T143701Z.cb0abaf6f0e61f24.3678bc46520e369417f0949fcac8e2ecec2fb073&text=" + formattedString + "&lang=" + chosenLanguageStr
         let url = URL(string: urlString)!
         
         //https://translate.yandex.net/api/v1.5/tr.json/getLangs
@@ -67,7 +69,7 @@ class TranslateResultsController: UIViewController {
                             self.translatedView.text = self.translatedString
                             self.hasTranslated = true
                             self.speakOutLoud()
-                    }
+                        }
                 }
                 catch _
                 {
@@ -75,7 +77,7 @@ class TranslateResultsController: UIViewController {
                     self.translatedView.text = "Error: Try Again"
                 }
             }
-            }.resume()
+        }.resume()
     }
     
     @IBAction func speakAgainPressed(_ sender: Any)
@@ -131,16 +133,52 @@ class TranslateResultsController: UIViewController {
     
     func speakOutLoud(){
         let translatedNoPunctuation = translatedString.components(separatedBy: CharacterSet.punctuationCharacters).joined()
-        let utterance = AVSpeechUtterance(string: translatedNoPunctuation)
-        utterance.volume = 1.0
-        utterance.rate = utteranceSpeed
-        utterance.voice = AVSpeechSynthesisVoice(language: voiceLanguage)
+        let utterance               = AVSpeechUtterance(string: translatedNoPunctuation)
+        utterance.volume            = 1.0
+        utterance.rate              = utteranceSpeed
+        utterance.voice             = AVSpeechSynthesisVoice(language: voiceLanguage)
         speechSynth.speak(utterance)
     }
     
     @IBAction func menuPressed(_ sender: Any) {
         playSound()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func setToTheme(){
+        
+        /*
+         translatedView
+         phraseView
+         
+         menuButton
+         replayButton
+         
+         playbackLabel
+         sliderSpeed
+         */
+        
+        menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        replayButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        replayButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        replayButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        translatedView.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        translatedView.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        translatedView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        phraseView.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        phraseView.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        phraseView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        playbackLabel.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        playbackLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        sliderSpeed.tintColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+        
     }
     /*
      // MARK: - Navigation

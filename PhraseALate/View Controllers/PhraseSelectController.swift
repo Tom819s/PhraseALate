@@ -16,15 +16,20 @@ class PhraseSelectController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var phraseLevel: UILabel!
     
     @IBOutlet weak var foodButton: UIButton!
     @IBOutlet weak var shopButton: UIButton!
     @IBOutlet weak var medicalButton: UIButton!
     @IBOutlet weak var lostButton: UIButton!
+    
+    
     var chosenLanguage = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
+        setToTheme()
     }
     
     
@@ -91,4 +96,53 @@ class PhraseSelectController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    
+    func setToTheme(){
+        
+        menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        firstButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        firstButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        firstButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        secondButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        secondButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        secondButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        thirdButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        thirdButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        thirdButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        fourthButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        fourthButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        fourthButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        //label
+        phraseLevel.layer.backgroundColor = SettingsViewController.globalValues.newBackgroundColor
+        if SettingsViewController.globalValues.newButtonColor != UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor{
+            phraseLevel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)}
+        else{
+            phraseLevel.textColor = UIColor.black
+        }
+        
+        //tab buttons swap text and background color to stand out
+        foodButton.layer.backgroundColor = SettingsViewController.globalValues.newTextColor
+        foodButton.layer.borderColor     = SettingsViewController.globalValues.newBorderColor
+        foodButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newButtonColor), for: .normal)
+        
+        shopButton.layer.backgroundColor = SettingsViewController.globalValues.newTextColor
+        shopButton.layer.borderColor     = SettingsViewController.globalValues.newBorderColor
+        shopButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newButtonColor), for: .normal)
+        
+        medicalButton.layer.backgroundColor = SettingsViewController.globalValues.newTextColor
+        medicalButton.layer.borderColor     = SettingsViewController.globalValues.newBorderColor
+        medicalButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newButtonColor), for: .normal)
+        
+        lostButton.layer.backgroundColor = SettingsViewController.globalValues.newTextColor
+        lostButton.layer.borderColor     = SettingsViewController.globalValues.newBorderColor
+        lostButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newButtonColor), for: .normal)
+        
+    }
 }

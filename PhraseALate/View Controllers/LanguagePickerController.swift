@@ -16,6 +16,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var countryCodeLabel: UILabel!
     @IBOutlet weak var chooseLangButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var geoLocateButton: customButton!
     
     var isTranslate = false
     var isPhrase = false
@@ -42,8 +43,13 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.294, green: 0.463, blue: 0.918, alpha: 1.0)])
-    }
+        if SettingsViewController.globalValues.newButtonColor != UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor{
+            return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor(cgColor: SettingsViewController.globalValues.newTextColor)])}
+        else{
+            return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)])
+            }
+        }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -54,6 +60,7 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         self.languagePicker.delegate = self
         self.languagePicker.dataSource = self
         
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
         //locationManager code
         
         locationManager.delegate = self;
@@ -62,6 +69,11 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer //since we're not navigating and only want a general idea of where the user is for country, no need for precision
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setToTheme()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,7 +109,6 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
                 }
                 
             }
-        //set desti
         
     }
     
@@ -135,6 +146,20 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
             
             
         } )
+    }
+    
+    func setToTheme(){
+        
+        menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        chooseLangButton.layer.backgroundColor = SettingsViewController.globalValues.newButtonColor
+        chooseLangButton.layer.borderColor     = SettingsViewController.globalValues.newBorderColor
+        chooseLangButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        geoLocateButton.layer.backgroundColor     = SettingsViewController.globalValues.newButtonColor
+        geoLocateButton.layer.borderColor         = SettingsViewController.globalValues.newBorderColor
+        geoLocateButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
     }
     func parseCountry(){
         if (countryCode != "TEST") //if country code was captured

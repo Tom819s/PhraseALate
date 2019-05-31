@@ -12,6 +12,8 @@ class customButton : UIButton{
 
     var borderWidth : CGFloat = 2.0
     var borderColor = UIColor.darkGray.cgColor
+    var textColor = UIColor.darkGray.cgColor
+    var buttonColor = UIColor.darkGray.cgColor
     
     
     override init(frame: CGRect) {
@@ -25,8 +27,11 @@ class customButton : UIButton{
     }
     
     func setupButton(){
-        layer.cornerRadius = 5
-        layer.borderWidth = borderWidth
-        layer.borderColor = borderColor
+        
+        self.borderColor     = UserDefaults.standard.object(forKey: "Border Color") as! CGColor? ?? UIColor.gray.cgColor
+        self.buttonColor     = UserDefaults.standard.object(forKey: "Button Color") as! CGColor? ?? UIColor.blue.cgColor
+        self.textColor       = UserDefaults.standard.object(forKey: "Text Color") as! CGColor? ?? UIColor.white.cgColor
+        layer.cornerRadius   = 5
+        layer.borderWidth    = borderWidth
     }
 }

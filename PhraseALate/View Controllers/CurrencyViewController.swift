@@ -15,6 +15,12 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var targetCurrencyBox: UITextField!
     @IBOutlet weak var targetCurrencyLabel: UILabel!
     @IBOutlet weak var currencyTableView: UITableView!
+    @IBOutlet weak var menuButton: customButton!
+    @IBOutlet weak var updateRatesButton: customButton!
+    @IBOutlet weak var geolocateButton: customButton!
+    @IBOutlet weak var selectCurrencyButton: customButton!
+    @IBOutlet weak var convertButton: customButton!
+    @IBOutlet weak var sourceCurrencyLabel: UILabel!
     
     
     var dict: [String:String] = [:]
@@ -35,9 +41,9 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
         try? dict = convertToDictionary()
-        
-        
+        setToTheme()
         numberToolbar.barStyle = UIBarStyle.default
         numberToolbar.items=[
             UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
@@ -168,4 +174,64 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         let anyResult: Any = try JSONSerialization.jsonObject(with: data, options: [])
         return anyResult as? [String: String] ?? [:]
     }
+    
+    func setToTheme(){
+        /*
+         USDBox: UITextField!
+         targetCurrencyBox: UITextField!
+         targetCurrencyLabel: UILabel!
+         currencyTableView: UITableView!
+         
+         menuButton: customButton!
+         updateRatesButton: customButton!
+         geolocateButton: customButton!
+         selectCurrencyButton: customButton!
+         convertButton: customButton!
+         
+         */
+        
+        menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        updateRatesButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        updateRatesButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        updateRatesButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        geolocateButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        geolocateButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        geolocateButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        selectCurrencyButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        selectCurrencyButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        selectCurrencyButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        convertButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
+        convertButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        convertButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        USDBox.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        USDBox.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        USDBox.textColor  = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+        
+        
+        targetCurrencyBox.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        targetCurrencyBox.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
+        targetCurrencyBox.textColor  = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+        
+        targetCurrencyLabel.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        targetCurrencyLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        sourceCurrencyLabel.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        sourceCurrencyLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        if SettingsViewController.globalValues.newButtonColor == UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor{
+            sourceCurrencyLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+            targetCurrencyLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+            
+        }
+        
+    }
+    
+    
 }

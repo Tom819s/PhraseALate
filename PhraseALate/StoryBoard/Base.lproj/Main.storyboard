@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.88481550789999996" green="0.93437033920000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.67224594454383546" green="0.63746858406301365" blue="0.56803831335616439" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PTg-9K-B00" secondAttribute="trailing" constant="120" id="2qr-fO-SYc"/>
                             <constraint firstItem="2sN-wS-5KE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="8Zh-b6-RY4"/>
@@ -122,6 +122,7 @@
                     <navigationItem key="navigationItem" id="vFy-Pk-3g4"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="currencyButton" destination="2sN-wS-5KE" id="kpM-5n-SXi"/>
                         <outlet property="phrasesButton" destination="2jZ-NT-3Ki" id="QYx-V1-uXz"/>
                         <outlet property="settingsButton" destination="PTg-9K-B00" id="kGI-au-E0z"/>
                         <outlet property="titleLabel" destination="HW7-Yn-2ml" id="Efs-pw-fWb"/>
@@ -225,6 +226,7 @@
                     <connections>
                         <outlet property="chooseLangButton" destination="0fI-Kr-k00" id="VMb-FD-TvO"/>
                         <outlet property="countryCodeLabel" destination="bSn-4n-N5Y" id="3Od-tA-Y5c"/>
+                        <outlet property="geoLocateButton" destination="SI1-ue-Pmk" id="cGC-Fc-ZhM"/>
                         <outlet property="languagePicker" destination="XuN-ly-kIc" id="t0o-0s-X7h"/>
                         <outlet property="menuButton" destination="ADV-0b-j0v" id="iPn-Js-EnI"/>
                         <segue destination="gNY-l1-fSN" kind="show" identifier="phrase" id="Ee8-mM-kZQ"/>
@@ -536,9 +538,15 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="USDBox" destination="JBs-pI-Cpm" id="rhS-bS-uhM"/>
+                        <outlet property="convertButton" destination="5HA-B7-vGV" id="JXz-cT-hc2"/>
                         <outlet property="currencyTableView" destination="bUs-Yn-pmR" id="BcR-pf-7GG"/>
+                        <outlet property="geolocateButton" destination="8BY-lw-QGR" id="s8W-X6-and"/>
+                        <outlet property="menuButton" destination="Kag-q3-KKf" id="dbn-kD-LFY"/>
+                        <outlet property="selectCurrencyButton" destination="nuh-gW-IN7" id="bFT-BZ-YSz"/>
+                        <outlet property="sourceCurrencyLabel" destination="9Yj-xc-YYs" id="BmX-Pu-i39"/>
                         <outlet property="targetCurrencyBox" destination="hzF-S6-hf6" id="coi-L9-3AE"/>
                         <outlet property="targetCurrencyLabel" destination="pmq-vA-rM6" id="YCg-1k-8eP"/>
+                        <outlet property="updateRatesButton" destination="gHP-HU-gbS" id="g4z-JH-Qr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKp-io-7g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -726,6 +734,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BTA-pl-t8E"/>
                     </view>
+                    <connections>
+                        <outlet property="classicButton" destination="VSd-PU-fi2" id="wJC-DQ-RVG"/>
+                        <outlet property="darkModeButton" destination="E2u-8R-Zys" id="M4V-bG-NAJ"/>
+                        <outlet property="menuButtons" destination="dNL-xe-RuJ" id="y40-HX-Ixz"/>
+                        <outlet property="papyrusButton" destination="fRe-cS-Aig" id="5Rf-zr-ieh"/>
+                        <outlet property="purpleButton" destination="tn7-wv-LNC" id="8ca-43-Wdq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyj-V3-VCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -977,6 +992,7 @@
                         <outlet property="lostButton" destination="8cK-Zq-dYb" id="IRv-Ha-TSQ"/>
                         <outlet property="medicalButton" destination="UsE-sH-InH" id="1cp-IW-PHW"/>
                         <outlet property="menuButton" destination="bAz-39-eZe" id="vC6-q2-DfE"/>
+                        <outlet property="phraseLevel" destination="jMR-pM-m5q" id="XYI-Mx-1uV"/>
                         <outlet property="secondButton" destination="92F-O7-Ena" id="lZP-pK-jwg"/>
                         <outlet property="shopButton" destination="BBa-bM-7F5" id="ErK-CR-pjz"/>
                         <outlet property="thirdButton" destination="Smw-t1-117" id="QoJ-n0-uJy"/>
@@ -1047,6 +1063,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.01" maxValue="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="hre-nM-tnv">
                                 <rect key="frame" x="88" y="614" width="199" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="JCx-sc-Ehl" eventType="valueChanged" id="mrP-Qt-AeD"/>
                                 </connections>
@@ -1088,7 +1105,9 @@
                     <connections>
                         <outlet property="menuButton" destination="Eoy-wA-0Ei" id="unu-kp-VGV"/>
                         <outlet property="phraseView" destination="fL3-89-kVG" id="jfB-IU-auJ"/>
+                        <outlet property="playbackLabel" destination="okS-2H-z2V" id="6xt-Ka-yxF"/>
                         <outlet property="replayButton" destination="kPl-tO-HJO" id="qBR-dc-rl1"/>
+                        <outlet property="sliderSpeed" destination="hre-nM-tnv" id="heK-NX-Miy"/>
                         <outlet property="translatedView" destination="nOd-eb-4VU" id="Jdj-8Y-9kg"/>
                     </connections>
                 </viewController>
@@ -1121,6 +1140,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9yA-OU-frL"/>
+        <segue reference="o3e-2R-qIC"/>
     </inferredMetricsTieBreakers>
 </document>
