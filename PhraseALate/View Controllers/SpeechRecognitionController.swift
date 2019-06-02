@@ -11,7 +11,6 @@ import Speech
 
 class SpeechRecognitionController: UIViewController {
     
-    @IBOutlet weak var transcriptionLabel: UILabel!
     
     @IBAction func translateButtonPressed(_ sender: Any) {
         playSound()
@@ -38,7 +37,6 @@ class SpeechRecognitionController: UIViewController {
             stopRecording()
             isRecording = false
             recordButton.backgroundColor = UIColor(cgColor : SettingsViewController.globalValues.newButtonColor)
-            //Red
             recordButton.setTitle("Record", for: .normal)
         }
         
@@ -48,6 +46,7 @@ class SpeechRecognitionController: UIViewController {
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var voiceTranscriptionLabel: UILabel!
     
     var translatedStr = String()
     var request = SFSpeechAudioBufferRecognitionRequest()
@@ -89,7 +88,7 @@ class SpeechRecognitionController: UIViewController {
             [unowned self]
             (result, _) in
             if let transcription = result?.bestTranscription {
-                self.transcriptionLabel.text = transcription.formattedString
+                self.voiceTranscriptionLabel.text = transcription.formattedString
             }
             
         }
@@ -109,7 +108,7 @@ class SpeechRecognitionController: UIViewController {
         if senderButton.tag != 1
         {
             let resultsController = segue.destination as! TranslateResultsController
-            let phrase = transcriptionLabel.text!
+            let phrase = voiceTranscriptionLabel.text!
             if !(phrase.isEmpty)
             {
                 resultsController.chosenPhrase = phrase
@@ -140,6 +139,20 @@ class SpeechRecognitionController: UIViewController {
         recordButton.layer.backgroundColor      = SettingsViewController.globalValues.newButtonColor
         recordButton.layer.borderColor          = SettingsViewController.globalValues.newBorderColor
         recordButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
+        
+        
+        voiceTranscriptionLabel.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
+        
+        if SettingsViewController.globalValues.newButtonColor != UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor
+        {
+        voiceTranscriptionLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        }
+        else
+        {
+            
+            voiceTranscriptionLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+        }
+        
         
     }
     /*

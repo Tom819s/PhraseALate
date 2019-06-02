@@ -56,7 +56,7 @@ class TitlePageController: UIViewController
             pickController.isTranslate = transChose
             pickController.isVoice = voiceChose
         }
-        else{
+        else{  
             playSound()
         }
 

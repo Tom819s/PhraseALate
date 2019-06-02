@@ -49,6 +49,7 @@ class SettingsViewController: UIViewController {
     @IBAction func classicPressed(_ sender: Any) {
         
         playSound()
+        
         globalValues.newBorderColor     =       UIColor.darkGray.cgColor
         globalValues.newButtonColor     =       UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor
         globalValues.newBackgroundColor =       UIColor.init(red: 0.885, green: 0.934, blue: 1.000, alpha: 1.0).cgColor
