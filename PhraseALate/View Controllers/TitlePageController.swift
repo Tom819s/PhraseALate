@@ -59,7 +59,7 @@ class TitlePageController: UIViewController
         else{  
             playSound()
         }
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

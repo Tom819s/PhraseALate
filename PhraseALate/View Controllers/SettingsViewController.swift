@@ -19,10 +19,10 @@ class SettingsViewController: UIViewController {
     
     struct globalValues {
         
-      static var newBorderColor : CGColor           = UIColor.darkGray.cgColor
-      static var newButtonColor : CGColor           = UIColor.blue.cgColor
-      static var newBackgroundColor : CGColor       = UIColor.blue.cgColor
-      static var newTextColor : CGColor             = UIColor.white.cgColor
+        static var newBorderColor : CGColor           = UIColor.darkGray.cgColor
+        static var newButtonColor : CGColor           = UIColor.blue.cgColor
+        static var newBackgroundColor : CGColor       = UIColor.blue.cgColor
+        static var newTextColor : CGColor             = UIColor.white.cgColor
         
         static var colorDict : [String? :CGColor] = [:]
     }
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
     var borderString : String               = String()
     var buttonString : String               = String()
     
-
+    
     @IBAction func menuButtonPressed(_ sender: Any) {
         playSound()
         self.navigationController?.popToRootViewController(animated: true)
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setToTheme()
         self.view.backgroundColor = UIColor(cgColor: SettingsViewController.globalValues.newBackgroundColor)
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -133,7 +133,7 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(borderString    ,    forKey: "Border Color")
         UserDefaults.standard.set(buttonString    ,    forKey: "Button Color")
     }
-
+    
     func setToTheme(){
         
         menuButtons.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
@@ -163,13 +163,13 @@ class SettingsViewController: UIViewController {
 
 func loadSettings()
 {
-   SettingsViewController.globalValues.newBorderColor     = SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Border Color")] ?? UIColor.lightGray.cgColor
+    SettingsViewController.globalValues.newBorderColor     = SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Border Color")] ?? UIColor.lightGray.cgColor
     print(SettingsViewController.globalValues.newBorderColor)
     
-   SettingsViewController.globalValues.newButtonColor     =  SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Button Color")] ?? UIColor.blue.cgColor
+    SettingsViewController.globalValues.newButtonColor     =  SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Button Color")] ?? UIColor.blue.cgColor
     
-   SettingsViewController.globalValues.newBackgroundColor =   SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Background Color")] ?? UIColor.init(red: 0.885, green: 0.934, blue: 1.000, alpha: 1.0).cgColor
+    SettingsViewController.globalValues.newBackgroundColor =   SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Background Color")] ?? UIColor.init(red: 0.885, green: 0.934, blue: 1.000, alpha: 1.0).cgColor
     
-   SettingsViewController.globalValues.newTextColor       =   SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Text Color")] ?? UIColor.white.cgColor
+    SettingsViewController.globalValues.newTextColor       =   SettingsViewController.globalValues.colorDict[UserDefaults.standard.string(forKey: "Text Color")] ?? UIColor.white.cgColor
     
 }

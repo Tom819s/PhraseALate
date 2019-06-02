@@ -47,8 +47,8 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
             return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor(cgColor: SettingsViewController.globalValues.newTextColor)])}
         else{
             return NSAttributedString(string: languageData[row], attributes:[NSAttributedString.Key.foregroundColor: UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)])
-            }
         }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,36 +79,36 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !(sender is UIButton)
         {
-                if (isTranslate) //if translating phrase we need to set the target viewcontroller's language field
-                {
-                    let translateController = segue.destination as! EnterTranslationController
-                    if (self.tempLangCode == 99){
-                        translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
-                    else{
-                        translateController.chosenLanguage = self.tempLangCode
-                    }
-                    
-                }
-                else if (isPhrase)
-                {
-                    let translateController = segue.destination as! PhraseSelectController
-                    if (self.tempLangCode == 99){
-                        translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
-                    else{
-                        translateController.chosenLanguage = self.tempLangCode
-                    }
-                }
-                else if (isVoice)
-                {
-                    let speechController = segue.destination as! SpeechRecognitionController
-                    if (self.tempLangCode == 99){
-                        speechController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
-                    else{
-                        speechController.chosenLanguage = self.tempLangCode
-                    }
+            if (isTranslate) //if translating phrase we need to set the target viewcontroller's language field
+            {
+                let translateController = segue.destination as! EnterTranslationController
+                if (self.tempLangCode == 99){
+                    translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
+                else{
+                    translateController.chosenLanguage = self.tempLangCode
                 }
                 
             }
+            else if (isPhrase)
+            {
+                let translateController = segue.destination as! PhraseSelectController
+                if (self.tempLangCode == 99){
+                    translateController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
+                else{
+                    translateController.chosenLanguage = self.tempLangCode
+                }
+            }
+            else if (isVoice)
+            {
+                let speechController = segue.destination as! SpeechRecognitionController
+                if (self.tempLangCode == 99){
+                    speechController.chosenLanguage = languagePicker.selectedRow(inComponent: 0)}
+                else{
+                    speechController.chosenLanguage = self.tempLangCode
+                }
+            }
+            
+        }
         
     }
     
@@ -202,16 +202,16 @@ class LanguagePickerController: UIViewController, UIPickerViewDelegate, UIPicker
             }
             
             countryCodeLabel.text = countryCode + ": " + countryLang
+        }
     }
 }
-}
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 

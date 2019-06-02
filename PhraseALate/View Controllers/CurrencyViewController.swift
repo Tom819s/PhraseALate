@@ -166,7 +166,7 @@ class CurrencyViewController: UIViewController, CLLocationManagerDelegate {
         parseNumericalEntryOfExtraneousDecimals()
         let amount = Double(USDBox.text!)
         targetCurrencyBox.text = String(format: "%.2f", amount! * conversionRate)
-        self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]!
+        self.targetCurrencyLabel.text = String(format: "%.2f", self.conversionRate) + " " + self.dict[self.countryCode]! + " " + getFlags(countryCode: self.countryCode)
         
     }
     

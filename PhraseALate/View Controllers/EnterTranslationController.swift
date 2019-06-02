@@ -42,7 +42,14 @@ class EnterTranslationController: UIViewController, UITextViewDelegate {
         if (textEnter.textColor == UIColor.lightGray)
         {
             textEnter.text = ""
-            textEnter.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+            if SettingsViewController.globalValues.newButtonColor == UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor
+            {
+                textEnter.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+            }
+            else{
+                textEnter.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+            }
+            
         }
     }
     

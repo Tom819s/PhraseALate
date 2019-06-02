@@ -69,7 +69,7 @@ class TranslateResultsController: UIViewController {
                             self.translatedView.text = self.translatedString
                             self.hasTranslated = true
                             self.speakOutLoud()
-                        }
+                    }
                 }
                 catch _
                 {
@@ -77,7 +77,7 @@ class TranslateResultsController: UIViewController {
                     self.translatedView.text = "Error: Try Again"
                 }
             }
-        }.resume()
+            }.resume()
     }
     
     @IBAction func speakAgainPressed(_ sender: Any)
@@ -147,17 +147,6 @@ class TranslateResultsController: UIViewController {
     
     func setToTheme(){
         
-        /*
-         translatedView
-         phraseView
-         
-         menuButton
-         replayButton
-         
-         playbackLabel
-         sliderSpeed
-         */
-        
         menuButton.layer.backgroundColor   = SettingsViewController.globalValues.newButtonColor
         menuButton.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
         menuButton.setTitleColor(UIColor(cgColor: SettingsViewController.globalValues.newTextColor), for: .normal)
@@ -168,14 +157,24 @@ class TranslateResultsController: UIViewController {
         
         translatedView.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
         translatedView.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
-        translatedView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        
+        if SettingsViewController.globalValues.newButtonColor == UIColor.init(red: 0.0, green: 0.463, blue: 1.0, alpha: 1.0).cgColor
+        {
+            
+            playbackLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+            translatedView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+            phraseView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
+        }
+        else
+        {
+            
+            playbackLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+            translatedView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+            phraseView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
+        }
         
         phraseView.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
         phraseView.layer.borderColor       = SettingsViewController.globalValues.newBorderColor
-        phraseView.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
-        
-        playbackLabel.layer.backgroundColor   = SettingsViewController.globalValues.newBackgroundColor
-        playbackLabel.textColor = UIColor(cgColor: SettingsViewController.globalValues.newTextColor)
         
         sliderSpeed.tintColor = UIColor(cgColor: SettingsViewController.globalValues.newButtonColor)
         
